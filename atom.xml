@@ -1,15 +1,601 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://root2v.github.io</id>
     <title>ROOTX</title>
-    <link href="http://example.com" />
-    <updated>2024-07-19T06:38:10.343Z</updated>
+    <link href="http://root2v.github.io" />
+    <updated>2024-07-19T15:30:10.869Z</updated>
     <entry>
-        <id>http://example.com/2024/07/19/log22-12-20/</id>
-        <title></title>
-        <link rel="alternate" href="http://example.com/2024/07/19/log22-12-20/"/>
-        <content type="html">&lt;h3 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h3&gt;
-&lt;h5 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h5&gt;
+        <id>http://root2v.github.io/2024/07/19/log23-04-11/</id>
+        <title>【Ubuntu】卸载GTK+3导致GNOME崩溃</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-04-11/"/>
+        <content type="html">&lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
+&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;最近运行一个软件需要用到 gtk 环境，下载 gtk+3 不能使用，打算卸载重装 gtk+2，卸载后  &lt;code&gt;gnome&lt;/code&gt;  疑似崩溃：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开始界面很多图标消失&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;终端变成了 XTerm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大多数功能仍能使用（小组件也可以）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重启过后进入不了图形界面&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;卸载 gtk+3 后 Ubuntu 无法进入图形界面&lt;/p&gt;
+&lt;p&gt;运行过以下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove libgtk-3-0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove libgtk-3-dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因&#34;&gt;#&lt;/a&gt; 原因&lt;/h2&gt;
+&lt;p&gt;可能的原因是 GTK 是 GNOME 的一个依赖库&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决办法&#34;&gt;#&lt;/a&gt; 解决办法&lt;/h2&gt;
+&lt;p&gt;卸载  &lt;code&gt;gnome&lt;/code&gt;  并重装&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove gnome&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; gnome&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_35386301/article/details/115374530&#34;&gt;ubuntu 进不去图形化界面系统解决方案_haley.du 的博客 - CSDN 博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <updated>2024-07-19T15:30:10.869Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-01-12/</id>
+        <title>【Ubuntu】游戏手柄库安装</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-12/"/>
+        <content type="html">&lt;h1 id=&#34;游戏手柄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#游戏手柄&#34;&gt;#&lt;/a&gt; 游戏手柄&lt;/h1&gt;
+&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;Python 开发游戏时想加入手柄&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;驱动安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#驱动安装&#34;&gt;#&lt;/a&gt; 驱动安装&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 安装 xbox 驱动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; xboxdrv&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 安装 ps3 驱动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; joy2key&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 安装手柄测试软件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; joystick&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;检测设备&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#检测设备&#34;&gt;#&lt;/a&gt; 检测设备&lt;/h2&gt;
+&lt;p&gt;查看设备信息&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; /proc/bus/input/devices&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;在输出中找到游戏手柄对应的信息&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;查看数据输出&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; dev/input/js0 &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; hexdump&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;blockquote&gt;
+&lt;p&gt;检测手柄事件，会实时更新在输出窗口&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;测试手柄&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;jstest&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jrc_january/article/details/74537363&#34;&gt;在 UBUNTU 中使用北通 USB 游戏手柄_rongchun.ji 的博客 - CSDN 博客_ubuntu 安装北通游戏手柄驱动&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/eastcnme/article/details/124966204&#34;&gt;xbox one 无线手柄在 ubuntu 下的对接开发_xboxdrv_Embedded engineer 的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
+</content>
+        <updated>2024-07-19T15:30:10.865Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-01-05/</id>
+        <title>【Ubuntu】安装微信</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-05/"/>
+        <content type="html">&lt;h1 id=&#34;安装微信&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h1&gt;
+&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;最近转手机文件太麻烦了，所以安装一个微信&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;更新-apt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#更新-apt&#34;&gt;#&lt;/a&gt; 更新 apt&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;添加-deep-wine-仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加-deep-wine-仓库&#34;&gt;#&lt;/a&gt; 添加 deep-wine 仓库&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; -O- https://deepin-wine.i-m.dev/setup.sh &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;安装微信-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信-2&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; com.qq.weixin.deepin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;a href=&#34;https://deepin-wine.i-m.dev/&#34;&gt;deep-wine 支持应用列表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题&#34;&gt;#&lt;/a&gt; 问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;下载失败&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;apt install 失败，并未遇见，但是记录一下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可能会出现以下报错信息&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; com.qq.weixin.deepin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;正在读取软件包列表&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. 完成&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;正在分析软件包的依赖关系树&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. 完成&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;正在读取状态信息&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. 完成                 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;有一些软件包无法被安装。如果您用的是 unstable 发行版，这也许是&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;因为系统无法达到您要求的状态造成的。该版本中可能会有一些您需要的软件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;包尚未被创建或是它们已被从新到&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Incoming&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;目录移出。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;下列信息可能会对解决问题有所帮助：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;下列软件包有未满足的依赖关系：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; libldap-2.4-2 &lt;span class=&#34;token builtin class-name&#34;&gt;:&lt;/span&gt; 依赖: libsasl2-2 &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2.1&lt;/span&gt;.27.1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; 但是 &lt;span class=&#34;token number&#34;&gt;2.1&lt;/span&gt;.27+dfsg2-3ubuntu1 正要被安装&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;问题原因&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;基本判断为 ubuntu 22.04 的问题（难得一次不是这个仓库的问题，也不是 deepin 的问题），高或者低版本的 ubuntu 应该还好，可能就 22.04 有这个问题。&lt;/p&gt;
+&lt;p&gt;deepin 的包依赖 &lt;code&gt;libldap-2.4-2&lt;/code&gt; ，但是应该对版本没要求。怪就怪在 ubuntu 22.04 仓库里的 &lt;code&gt;libldap-2.4-2&lt;/code&gt;  依赖 &lt;code&gt;libsasl2-2 (不低于2.1.27.1版本)&lt;/code&gt; ，可是后者在源里压根不存在。&lt;br /&gt;
+所以即使不为了 deepin-wine，你直接手动 &lt;code&gt;apt install libldap-2.4-2&lt;/code&gt;  也一样报错。&lt;br /&gt;
+这个问题属于更新过程中的纰漏了，估计过几个月官方应该会解决。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解决方法&lt;/p&gt;
+&lt;p&gt;去&lt;a href=&#34;http://mirrors.163.com/ubuntu/pool/main/c/cyrus-sasl2/&#34;&gt; Index of /ubuntu/pool/main/c/cyrus-sasl2/&lt;/a&gt; 下载&lt;a href=&#34;http://mirrors.163.com/ubuntu/pool/main/c/cyrus-sasl2/libsasl2-2_2.1.28+dfsg-6ubuntu2_amd64.deb&#34;&gt; libsasl2-2_2.1.28+dfsg-6ubuntu2_amd64.deb&lt;/a&gt; 和&lt;a href=&#34;http://mirrors.163.com/ubuntu/pool/main/c/cyrus-sasl2/libsasl2-modules-db_2.1.28+dfsg-6ubuntu2_amd64.deb&#34;&gt; libsasl2-modules-db_2.1.28+dfsg-6ubuntu2_amd64.deb&lt;/a&gt; 先手动 &lt;code&gt;dpkg -i xxx.deb&lt;/code&gt;  安装，然后正常 apt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;无法打开用户界面&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;修改  &lt;code&gt;/opt/apps/com.qq.weixin.deepin/files/run.sh&lt;/code&gt;  文件，注释掉设置  &lt;code&gt;WINEPREDLL&lt;/code&gt;  环境变量的一行&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token parameter variable&#34;&gt;-export&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;WINEPREDLL&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$ARCHIVE_FILE_DIR&lt;/span&gt;/dlls&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+&lt;span class=&#34;token comment&#34;&gt;# export WINEPREDLL=&#34;$ARCHIVE_FILE_DIR/dlls&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tips&#34;&gt;#&lt;/a&gt; tips&lt;/h2&gt;
+&lt;p&gt;聊天下载的问题打不开，在用户文件夹下的  &lt;code&gt;~/Documents/WeChat Files&lt;/code&gt;  中能够找到，应该有微信号对应的文件夹，进入之后有  &lt;code&gt;FileStorage&lt;/code&gt;  文件夹用于存储用户文件，还有其他文件夹&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;14&lt;/span&gt; ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 ./&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 Cache/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 CustomEmotion/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 Fav/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 File/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 General/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 Image/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;13&lt;/span&gt; ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;16&lt;/span&gt;:14 MsgAttach/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 PAG/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 Sns/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;16&lt;/span&gt;:20 Temp/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 TempFromPhone/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;drwxrwxr-x &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;  ***** ***** &lt;span class=&#34;token number&#34;&gt;4096&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;月 &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; 00:35 Video/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;可以看到，只有 MsgAttach 和 Temp 最近有修改，查看 Temp 中的文件后发现这个文件夹应该是用于存储登陆信息的，MsgAttach 通过名字推断应该是存储聊天附带内容，进入后会有一系列由数字和字母组成的 32 位名称的文件夹，每个文件夹可能对应一个聊天，找到最近修改的文件夹进入就能找到了，一次成功的记录：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;~/Documents/WeChat Files/wxid_******/FileStorage/MsgAttach/******/File/2023-01&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;聊天记录破解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#聊天记录破解&#34;&gt;#&lt;/a&gt; 聊天记录破解&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/45070018?sort=created&#34;&gt;微信电脑版的聊天记录怎么解密？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.iculture.cc/knowledge/pig=22381&#34;&gt;微信好友列表 / 聊天记录导出小工具 支持全版本 支持导出 CSV-FancyPig&#39;s blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_38493195/article/details/124870781&#34;&gt;Ubuntu 系列学习（四）ubuntu 22.04 安装 微信、QQ_毅博明喆的博客 - CSDN 博客_ubuntu 22.04 微信&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yqq1997/article/details/128093339&#34;&gt;解决 Ubuntu22.04 微信打不开的问题_youngqqcn 的博客 - CSDN 博客_ubuntu 安装微信打不开&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/zq1997/deepin-wine/issues/312&#34;&gt;ubuntu 22.04.1 安装依赖问题・Issue #312・zq1997/deepin-wine・GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&amp;lt;hr&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;百度云盘加速&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#百度云盘加速&#34;&gt;#&lt;/a&gt; 百度云盘加速&lt;/h1&gt;
+&lt;h2 id=&#34;概述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述-2&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;事实上不只限于百度网盘，这个主要是多线程下载&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;aria2-安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aria2-安装及使用&#34;&gt;#&lt;/a&gt; Aria2 安装及使用&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; aria2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;使用&lt;/p&gt;
+&lt;p&gt;有的链接需要加双引号，否则会下载失败&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;aria2c 下载链接地址&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;安装获取直链脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装获取直链脚本&#34;&gt;#&lt;/a&gt; 安装获取直链脚本&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/436446-%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B&#34;&gt;网盘直链下载助手&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+</content>
+        <updated>2024-07-19T15:30:10.855Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-01-02/</id>
+        <title>【Ubuntu】安装网易云音乐</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-02/"/>
+        <content type="html">&lt;h1 id=&#34;安装网易云音乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装网易云音乐&#34;&gt;#&lt;/a&gt; 安装网易云音乐&lt;/h1&gt;
+&lt;h2 id=&#34;特别说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特别说明&#34;&gt;#&lt;/a&gt; 特别说明&lt;/h2&gt;
+&lt;p&gt;根据网上的教程安装出现了一些问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;参考&lt;a href=&#34;https://blog.csdn.net/leibris/article/details/124895824&#34;&gt; Ubuntu22.04 安装网易云音乐实操笔记_LeiBris 的博客 - CSDN 博客_ubuntu 音乐&lt;/a&gt;的步骤能进入用户界面，但是会报错&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;参考&lt;a href=&#34;https://blog.csdn.net/footrip/article/details/103639958&#34;&gt;解决 Failed to load module canberra-gtk-module 错误_footrip 的博客 - CSDN 博客_libcanberra-gtk-module&lt;/a&gt; 中的解决办法，进入不了界面，但是如果只是把动态库文件放到了网易云库文件夹下，其他步骤按照上一个参考中做就没有问题&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我感觉这两个的区别就是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第一个：使用系统内置的  &lt;code&gt;/lib/x86_64-linux-gnu/&lt;/code&gt;  的库文件，但是由于系统更新有几个库文件缺失，所以会导致能进但是某些功能受限导致卡死&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二个：教程上感觉是补全缺失的动态库文件，然后让软件直接使用自己的库文件，但是会导致进入不了界面，不知道&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后综合了两个教程的方法，最后能正常进入，且运行中没有再发生卡死的情况，根据结果来看，我认为把缺失的动态库添加到软件自带的库中，在启动脚本中再增添系统内置库的路径，这样就能同时有两个库的资源，并且只修改了软件的库文件，就算出现问题也最多软件不能用，不会危害到系统，比较安全&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;如果以后再发生运行中卡死的情况，可以试试完全执行第二个教程，该文章中在最后把运行  &lt;code&gt;libs&lt;/code&gt;  库文件没懂是什么操作，可能是赋予运行权限然后运行？&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;下载安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载安装&#34;&gt;#&lt;/a&gt; 下载安装&lt;/h2&gt;
+&lt;p&gt;去&lt;a href=&#34;https://music.163.com/#/download&#34;&gt;网易云音乐官网&lt;/a&gt;在其他操作系统里选择 Linux，选择  &lt;code&gt;ubuntu18.04&lt;/code&gt;  版本到下载目录安装&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-i&lt;/span&gt; netease-cloud-music_1.2.1_amd64_ubuntu_20190428.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;修改启动脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改启动脚本&#34;&gt;#&lt;/a&gt; 修改启动脚本&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /opt/netease/netease-cloud-music&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; ./netease-cloud-music.bash&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;修改内容如下，主要是添加  &lt;code&gt;cd /lib/x86_64-linux-gnu/&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token shebang important&#34;&gt;#!/bin/sh&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;HERE&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;$(dirname &#34;&lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;$(&lt;/span&gt;readlink &lt;span class=&#34;token parameter variable&#34;&gt;-f&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;0&amp;#125;&lt;/span&gt;&#34;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;export LD_LIBRARY_PATH=&#34;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;HERE&amp;#125;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/libs:&lt;span class=&#34;token variable&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;export QT_PLUGIN_PATH=&#34;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;HERE&amp;#125;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/plugins&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;export QT_QPA_PLATFORM_PLUGIN_PATH=&#34;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;HERE&amp;#125;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;/plugins/platforms&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;cd /lib/x86_64-linux-gnu/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;exec &#34;&lt;/span&gt;&lt;span class=&#34;token variable&#34;&gt;$&amp;#123;HERE&amp;#125;&lt;/span&gt;&#34;/netease-cloud-music &lt;span class=&#34;token variable&#34;&gt;$@&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;重新安装-canberra-gtk-module-模块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重新安装-canberra-gtk-module-模块&#34;&gt;#&lt;/a&gt; 重新安装  &lt;code&gt;canberra-gtk-module&lt;/code&gt;  模块&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这里学会使用  &lt;code&gt;locate&lt;/code&gt;  命令，可以定位模块对应的文件位置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;重新安装模块&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; libcanberra-gtk-module&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;添加动态库文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加动态库文件&#34;&gt;#&lt;/a&gt; 添加动态库文件&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ubuntu 22.04 由于更换 / 升级了一些动态库，系统动态库 x86_64-linux-gnu 内 libgio-2.0.so.0、libpangocairo-1.0.so.0 引用库缺少了函数支持， 导致程序无法运行，又因前两个动态库的更换导致依赖动态库 libselinux.so.1 缺少。故只能使用安装目录库并补齐以上三个动态库，且 Ubuntu22.04 的库无法使用，只能使用 21.10 以下的系统库文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;一定要将文件添加到网易云内置的库，不要放到系统库中以免造成系统崩溃！！！&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; libgio-2.0.so.0 libpangocairo-1.0.so.0.4800.10 libselinux.so.1 /opt/netease/netease-cloud-music/libs&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;重新启动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重新启动&#34;&gt;#&lt;/a&gt; 重新启动&lt;/h2&gt;
+&lt;p&gt;重新启动就没有问题了&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;问题记录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题记录&#34;&gt;#&lt;/a&gt; 问题记录&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;建议有疑问的软件可以通过命令行启动，如果有问题的话会在终端输出报错信息，这样就可以通过报错信息寻找解决办法了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;启动无反应&lt;/p&gt;
+&lt;p&gt;报错信息如下&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/opt/netease/netease-cloud-music/netease-cloud-music: symbol lookup error: /lib/x86_64-linux-gnu/libpangocairo-1.0.so.0: undefined symbol: pango_font_get_hb_font&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;解决办法：参考安装过程中的修改启动脚本（建议备份习惯）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;报错  &lt;code&gt;Failed to load module &amp;quot;canberra-gtk-module&amp;quot;&lt;/code&gt; &lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;解决办法：重新安装  &lt;code&gt;libcanberra-gtk-module&lt;/code&gt;  模块&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;卡死&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;添加动态库到网易云软件的库中  &lt;code&gt;/opt/netease/netease-cloud-music/libs&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一定要是网易云内置的库，不要放到系统库中以免造成系统崩溃！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;网络&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/leibris/article/details/124895824&#34;&gt;Ubuntu22.04 安装网易云音乐实操笔记_LeiBris 的博客 - CSDN 博客_ubuntu 音乐&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/footrip/article/details/103639958&#34;&gt;解决 Failed to load module canberra-gtk-module 错误_footrip 的博客 - CSDN 博客_libcanberra-gtk-module&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/chauncygu/article/details/109143966&#34;&gt;Ubuntu 下网易云音乐出现 “加载失败，网络错误，可以在设置中发送反馈” 问题及解决_AndrewGSD 的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://icode.best/i/15851947332762&#34;&gt;Ubuntu 22.4 网易云音乐启动失败处理方法 - 爱代码爱编程&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bbsmax.com/A/A2dmjDYAze/&#34;&gt;Ubuntu16.04 下的网易云出现网络异常、无法播放，界面无响应问题的统一解决&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h1 id=&#34;安装locate命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装locate命令&#34;&gt;#&lt;/a&gt; 安装 locate 命令&lt;/h1&gt;
+&lt;h2 id=&#34;安装配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装配置&#34;&gt;#&lt;/a&gt; 安装配置&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 安装 locate&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; mlocate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 需要更新索引库&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; updatedb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;几个查找命令对比&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#几个查找命令对比&#34;&gt;#&lt;/a&gt; 几个查找命令对比&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;  ：在 PATH 变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;whereis&lt;/code&gt;  ： &lt;code&gt;whereis&lt;/code&gt;  命令只能用于程序名的搜索，而且只搜索二进制文件（参数 - b）、man 说明文件（参数 - m）和源代码文件（参数 - s）。如果省略参数，则返回所有信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;locate&lt;/code&gt;  ：配合数据库查看文件位置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;find&lt;/code&gt;  ：实际搜寻硬盘查询文件名称&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当用  &lt;code&gt;locate&lt;/code&gt;  无法查找到需要的文件时，可以使用  &lt;code&gt;find&lt;/code&gt; ，但是  &lt;code&gt;find&lt;/code&gt;  是在硬盘上遍历查找，因此非常消耗硬盘的资源，而且效率也非常低，因此建议大家优先使用  &lt;code&gt;whereis&lt;/code&gt;  和  &lt;code&gt;locate&lt;/code&gt; ，可以在使用  &lt;code&gt;locate&lt;/code&gt;  之前，先使用  &lt;code&gt;updatedb&lt;/code&gt;  命令，手动更新数据库。。&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料-2&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/m0_59673430/article/details/119863445&#34;&gt;Ubuntu 中 locate 命令缺失解决方法_Dory_Youth 的博客 - CSDN 博客_ubuntu locate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.iteye.com/blog/312788172-730280&#34;&gt;linux 下 which、whereis、locate、find 命令的区别&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yucan1001/article/details/8451169&#34;&gt;which、whereis、locate、find 命令用法_肥萝卜使大力的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
+</content>
+        <updated>2024-07-19T15:30:10.841Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-31/</id>
+        <title>【Ubuntu】GNOME安装及使用</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-31/"/>
+        <content type="html">&lt;h1 id=&#34;gnome安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gnome安装及使用&#34;&gt;#&lt;/a&gt; GNOME 安装及使用&lt;/h1&gt;
+&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;本机使用的系统版本为 Ubuntu22.04 ，自带 gnome42 ，据说和原版 gnome 有区别，但我在使用中并未发现问题，因此就不重新安装 gnome 桌面了，直接添加 gnome 工具，以下是参考文章 &lt;a href=&#34;https://bytexd.com/how-to-install-gnome-desktop-in-ubuntu/&#34;&gt;How to Install GNOME Desktop in Ubuntu 22.04 or 20.04&lt;/a&gt; 中的一段话，感觉应该是说 Ubuntu 的 Gnome 算是一个为了与 Ubuntu 集成的特别版&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The difference between Vanilla GNOME and Ubuntu GNOME is that Ubuntu GNOME is an official flavor of Ubuntu, while Vanilla GNOME is not. Ubuntu GNOME is a fork of the GNOME project that is designed to be integrated with the Ubuntu operating system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;个性化定制&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先在应用程序列表里搜索  &lt;code&gt;tweak&lt;/code&gt;  看能不能找到  &lt;code&gt;优化&lt;/code&gt;  有的话可能不需要下载&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; gnome-tweaks&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;一些教程使用的  &lt;code&gt;gnome-tweak-tools&lt;/code&gt;  已经被这个替代了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装拓展管理器&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;gnome-tweaks&lt;/code&gt;  已经不再管理拓展，需要安装额外的拓展管理程序&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; gnome-shell-extension-manager&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装浏览器插件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拓展管理器里其实也可以下载，喜欢从网页下载的话使用以下网址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Chrome 浏览器&lt;a href=&#34;https://chrome.google.com/webstore/detail/gnome-shell-integration/&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Firefox 浏览器&lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装网页与本地扩展的联系工具&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装这个插件和浏览器插件之后可以在网页端直接安装 Gnome Shell 插件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; chrome-gnome-shell&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;插件推荐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#插件推荐&#34;&gt;#&lt;/a&gt; 插件推荐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;外观：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/19/user-themes/&#34;&gt;User Themes&lt;/a&gt;：想给  &lt;code&gt;gnome&lt;/code&gt;  换主题就必须安装这个插件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//extensions.gnome.org/extension/97/coverflow-alt-tab/&#34;&gt;Coverflow Alt-Tab&lt;/a&gt;：很棒的切换效果，同样支持一些自定义设置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/307/dash-to-dock/&#34;&gt;Dash to Dock&lt;/a&gt;：将 gnome 左侧的 dock 变成类似于 MacOS 的 dock（Dash to Dock 和 Ubuntu Dock 有冲突，文章里建议删除 Ubuntu Dock，但在拓展管理里把 Ubuntu Dock 关闭即可）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/1287/unite/&#34;&gt;Unite&lt;/a&gt;：可对顶栏自定义，例如添加当前窗口的标题或最大最小化按钮，也可以去除标题栏&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/1460/vitals/&#34;&gt;Vitals&lt;/a&gt;：在顶栏显示内存、负载、CPU 使用率等信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/1085/simple-net-speed/&#34;&gt;Simple net speed&lt;/a&gt;：显示网速，拓展  &lt;code&gt;Net Speed&lt;/code&gt;  与  &lt;code&gt;Gnome42&lt;/code&gt;  不兼容，所以使用这个拓展作为替代品～～&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;小工具&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/1112/screenshot-tool/&#34;&gt;Screenshot tool&lt;/a&gt;：截图工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//extensions.gnome.org/extension/750/openweather/&#34;&gt;OpenWeather&lt;/a&gt;：显示天气&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org//extension/3088/extension-list/&#34;&gt;Extension List&lt;/a&gt;：便捷的扩展管理小插件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//extensions.gnome.org/extension/1357/notes/&#34;&gt;Notes&lt;/a&gt;：便利贴小工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生产力&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/779/clipboard-indicator/&#34;&gt;Clipboard Indicator&lt;/a&gt;：显示复制粘贴的历史，还可以永久保存某次复制历史&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其他&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/1610/fullscreen-notifications/&#34;&gt;Fullscreen Notifications&lt;/a&gt;：全屏时仍可弹出系统通知&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/&#34;&gt;Top Panel Workspace Scroll&lt;/a&gt;：在顶栏滚动鼠标就可以切换工作区&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当前 gnome 版本不支持&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//extensions.gnome.org/extension/1176/argos/&#34;&gt;Argos&lt;/a&gt;：重磅推荐 Argo，可以用脚本自定义各种各样的小组件&lt;/s&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/3070/simpler-off-menu/&#34;&gt;Simpler Off Menu&lt;/a&gt;：可以自定义顶栏的设置菜单&lt;/s&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/1367/hide-frequent-view/&#34;&gt;Hide Frequent View&lt;/a&gt;：在应用列表中隐藏 “常用” 标签页&lt;/s&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;&lt;a href=&#34;https://extensions.gnome.org/extension/2494/bigavatar/&#34;&gt;BigAvatar&lt;/a&gt;：在顶栏的设置菜单中显示自己的头像&lt;/s&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;s&gt;&lt;a href=&#34;https://link.zhihu.com/?target=https%3A//extensions.gnome.org/extension/1036/extensions/&#34;&gt;Extensions&lt;/a&gt;：便捷的扩展管理小插件&lt;/s&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/409493039&#34;&gt;Ubuntu 下 Gnome 界面美化、超好用插件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/a772304419/article/details/124975028&#34;&gt;linux ubuntu 22.04 安装后配置优化：调整 Dock Panel 外观 &amp;amp; 启用 Gnome 扩展支持 &amp;amp; 安装 gnome tweaks_学亮编程手记的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.linuxmi.com/ubuntu-22-04-lts-linux-tweak-tool.html&#34;&gt;如何在 Ubuntu 22.04 LTS Linux 上安装 Tweak 优化工具&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bytexd.com/how-to-install-gnome-desktop-in-ubuntu/&#34;&gt;How to Install GNOME Desktop in Ubuntu 22.04 or 20.04&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/a772304419/article/details/124975028&#34;&gt;linux ubuntu 22.04 安装后配置优化：调整 Dock Panel 外观 &amp;amp; 启用 Gnome 扩展支持 &amp;amp; 安装 gnome tweaks_学亮编程手记的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h1 id=&#34;markdown添加空白行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#markdown添加空白行&#34;&gt;#&lt;/a&gt; MarkDown 添加空白行&lt;/h1&gt;
+&lt;h2 id=&#34;概述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述-2&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;Markdown 本身特性会忽略一个以上的空行，每次关闭编辑后空白行会被自动删除，但是有的时候需要空白行使文章段落分明，这里有来两种方法插入空白行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;单独一行写入  &lt;code&gt;&amp;amp;nbsp;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Markdown：&lt;/em&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;我们的中间有一个空行。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;好像是的。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;em&gt;显示结果：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们的中间有一个空行。&lt;br /&gt;
+ &lt;br /&gt;
+好像是的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 HTML 标签  &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Markdown：&lt;/em&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;我们的中间有一个空行。&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;br&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;好像是的。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;em&gt;显示结果：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们的中间有一个空行。&amp;lt;br /&amp;gt;&lt;br /&gt;
+ 好像是的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料-2&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/PursueLuo/article/details/95678470&#34;&gt;Markdown：空行和空格_lcg_magic 的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h1 id=&#34;nvidia显卡驱动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nvidia显卡驱动&#34;&gt;#&lt;/a&gt; Nvidia 显卡驱动&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;已经通过软件更新的附加驱动项安装，这里记录一下以备以后需要&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料-3&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Perfect886/article/details/119109380&#34;&gt;Ubuntu20.04、22.04 安装 nvidia 显卡驱动 —— 超详细、最简单_道阻且长行则将至！的博客 - CSDN 博客_ubuntu 安装 nvidia 显卡驱动&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h1 id=&#34;python-安装-pygame-库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#python-安装-pygame-库&#34;&gt;#&lt;/a&gt; Python 安装 pygame 库&lt;/h1&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; pip3 &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; pygame&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <updated>2024-07-19T15:30:10.832Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-29/</id>
+        <title>【Ubuntu】Ubuntu Windows(Win10)双系统时间不同步</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-29/"/>
+        <content type="html">&lt;h1 id=&#34;ubuntu-windowswin10双系统时间不同步&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-windowswin10双系统时间不同步&#34;&gt;#&lt;/a&gt; Ubuntu Windows (Win10) 双系统时间不同步&lt;/h1&gt;
+&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;使用 Win10 玩游戏，发现每次登陆 Steam 上的游戏时发现提示当前存档和云存档进度不一，本地存档较新，每次退出游戏时即便等待 Steam 更新云存档完成还是会报警告&lt;br /&gt;
+，这时发现每次登陆系统时间与当地时间不符，Steam 应该是通过存档时间判断，本地存档时系统时间不正确，记录了一个错误时间，校准过系统时间后再登陆游戏存档，退出重新登陆时就不会有问题了，但是为什么每次登陆时 Windows 系统时间会不准？查阅资料发现，是 Windows 和 Ubuntu 对 BIOS 时间的处理不同，最终通过 Ubuntu 的 &lt;code&gt;timedatectl&lt;/code&gt;  时间管理工具修改 Ubuntu 设置解决&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;问题原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题原因&#34;&gt;#&lt;/a&gt; 问题原因&lt;/h2&gt;
+&lt;p&gt;BIOS 时间：系统硬件时间 (RTC)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;windows 认为，BIOS 时间就是当地时间。所以 windows 会直接显示 BIOS 时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ubuntu 认为，BIOS 时间应当是 UTC 时间（格林尼治标准时间）。所以 ubuntu 会将 BIOS 时间加上 8 小时后再显示出来（在中国）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ubuntu 中可以通过  &lt;code&gt;timedatectl statue&lt;/code&gt;  查看系统时间设置&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方法&#34;&gt;#&lt;/a&gt; 解决方法&lt;/h2&gt;
+&lt;p&gt;进入 Ubuntu 打开终端输入以下命令&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo timedatectl set-local-rtc 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这句话的作用是让 ubuntu 将系统时间和 BIOS 时间同步。现在，ubuntu 和 windows 一样，都认为 BIOS 时间就是当地时间，联网更新时，也是直接将 BIOS 时间设为当地时间&lt;/p&gt;
+&lt;p&gt;再次使用 timedatectl 时系统会有一个警告，不需要关心&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shel&#34;&gt;Warning: The system is configured to read the RTC time in the local time zone.
+         This mode cannot be fully supported. It will create various problems
+         with time zone changes and daylight saving time adjustments. The RTC
+         time is never updated, it relies on external facilities to maintain it.
+         If at all possible, use RTC in UTC by calling
+         &#39;timedatectl set-local-rtc 0&#39;. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/492885761&#34;&gt;ubuntu 与 windows 双系统时间同步问题 —— 简明指南 - 知乎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/m0_63969219/article/details/124360227&#34;&gt;Ubuntu&amp;amp;Windows 双系统时间不同步，Windows 慢 8 个小时_江城撅嘴的川羌的博客 - CSDN 博客_双系统时间&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
+&lt;h1 id=&#34;安装新输入法-fcitx5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装新输入法-fcitx5&#34;&gt;#&lt;/a&gt; 安装新输入法 Fcitx5&lt;/h1&gt;
+&lt;h2 id=&#34;概述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述-2&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;原始输入法  &lt;code&gt;ibus&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;安装及配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装及配置&#34;&gt;#&lt;/a&gt; 安装及配置&lt;/h2&gt;
+&lt;p&gt;建议按照&lt;a href=&#34;https://blog.csdn.net/w710537643/article/details/114388624&#34;&gt; Ubuntu 20.10 安装 fcitx5 输入法_小和尚敲木头的博客 - CSDN 博客_ubuntu20 fcitx5&lt;/a&gt; 中的方法安装，这里介绍的方法是完整安装，即将 fcitx5 的相关包全部下载安装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;安装： &lt;code&gt;sudo apt install fcitx5* kde-config-fcitx5&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加中文词库&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 下载词库文件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20220416.dict&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 创建存储目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; ~/.local/share/fcitx5/pinyin/dictionaries/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 移动词库文件至该目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mv&lt;/span&gt; zhwiki-20220416.dict ~/.local/share/fcitx5/pinyin/dictionaries/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置默认输入法&lt;/p&gt;
+&lt;p&gt;命令行输入  &lt;code&gt;im-config&lt;/code&gt;  根据弹出窗口的提示，将首选输入法设置为 Fcitx 5 即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置开机自启动：&lt;/p&gt;
+&lt;p&gt;安装  &lt;code&gt;gnome-tweaks&lt;/code&gt;  在开机启动程序里添加，已经安装完成后发现 Ubuntu 自带了启动应用程序，应该也可以设置，能看到使用  &lt;code&gt;gnome-tweaks&lt;/code&gt;  添加的自启动程序出现在这个列表里&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;环境变量配置：&lt;/p&gt;
+&lt;p&gt;在  &lt;code&gt;~/.pam_pam_environment&lt;/code&gt;  中添加环境变量如下&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;GTK_IM_MODULE &lt;span class=&#34;token assign-left variable&#34;&gt;DEFAULT&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;fcitx5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;QT_IM_MODULE  &lt;span class=&#34;token assign-left variable&#34;&gt;DEFAULT&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;fcitx5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token environment constant&#34;&gt;XMODIFIERS&lt;/span&gt;    &lt;span class=&#34;token assign-left variable&#34;&gt;DEFAULT&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;@im&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;fcitx5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更换主题：&lt;/p&gt;
+&lt;p&gt;可以去 GitHub 搜索  &lt;code&gt;fcitx5 theme&lt;/code&gt;  ，这里使用了&lt;a href=&#34;https://github.com/sxqsfun/fcitx5-sogou-themes&#34;&gt; GitHub - sxqsfun/fcitx5-sogou-themes: 几款 极简风 搜狗皮肤转换的 fcitx5 主题😄️😄️😄️&lt;/a&gt;的  &lt;code&gt;Alpha-black&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加方法就是将对应主题文件夹复制到  &lt;code&gt;~/.local/share/fcitx5/themes&lt;/code&gt;  文件夹下&lt;/p&gt;
+&lt;p&gt;由于其首选词高亮颜色太暗所以将更换了配色，更改方法就是修改  &lt;code&gt;theme.conf&lt;/code&gt;  文件  &lt;code&gt;[InputPanel]&lt;/code&gt;  中的变量，(  &lt;code&gt;skin.ini&lt;/code&gt;  应该是 Windows 环境的配置文件 )&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题&#34;&gt;#&lt;/a&gt; 问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;环境变量&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;参考 2 建议了两种配置，一种是写入  &lt;code&gt;~/.bash_profile&lt;/code&gt;  仅对当前用户生效，另一种是写入系统级配置文件  &lt;code&gt;/etc/profile&lt;/code&gt;  对所有用户生效，但是都没有使用，最后参考了&lt;a href=&#34;https://blog.csdn.net/w710537643/article/details/114388624&#34;&gt; Ubuntu 20.10 安装 fcitx5 输入法_小和尚敲木头的博客 - CSDN 博客_ubuntu20 fcitx5&lt;/a&gt; 中的说法，环境变量不要随便装，因此在   &lt;code&gt;~/.pam_pam_environment&lt;/code&gt;  中添加环境变量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;终端无法使用中文输入&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;不知道原因，原本没有完整安装，只是安装了以下几个包，完整安装了  &lt;code&gt;fcitx5&lt;/code&gt;  就没有问题了&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; fcitx5 &lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;fcitx5-chinese-addons &lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;fcitx5-frontend-gtk3 fcitx5-frontend-gtk2 &lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;fcitx5-frontend-qt5 kde-config-fcitx5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;第一次打开界面  &lt;code&gt;shift&lt;/code&gt;  无反应&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;每打开一个新桌面会话，第一次输入时需要使用  &lt;code&gt;ctrl&lt;/code&gt;  +  &lt;code&gt;shift&lt;/code&gt;  切换输入法，之后就可以只用  &lt;code&gt;shift&lt;/code&gt;  切换&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;修复 JetBrains 系 IDE 显示问题&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在 JetBrains 系 IDE（如 PyCharm）中，输入法选择框的位置始终固定于屏幕左下角，而非随输入光标移动，在中文输入很不方便。该问题为 IDE 的 JetBrainsRuntime 缺陷所致。可尝试使用 RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64 这个仓库发布的 JBR 文件解决&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料-2&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/508797663&#34;&gt;Ubuntu22.04 安装 Fcitx5 中文输入法（详细）&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/mziing/article/details/124557091&#34;&gt;Ubuntu22.04 安装配置 Fcitx5 中文输入法（详细）_muzing_的博客 - CSDN 博客_fcitx5&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/w710537643/article/details/114388624&#34;&gt;Ubuntu 20.10 安装 fcitx5 输入法_小和尚敲木头的博客 - CSDN 博客_ubuntu20 fcitx5&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h1 id=&#34;一个比较完美的帖子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一个比较完美的帖子&#34;&gt;#&lt;/a&gt; 一个比较完美的帖子&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_36153106/article/details/126656107&#34;&gt;ubuntu22.04 美化、办公、开发工具安装_他们叫我都叫兽的博客 - CSDN 博客_ubuntu22.04&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_42313728/article/details/125733569&#34;&gt;Ubuntu22.04 安装与配置记录_过客 WZX 的博客 - CSDN 博客_ubuntu22.04&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h1 id=&#34;apt清理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#apt清理&#34;&gt;#&lt;/a&gt; APT 清理&lt;/h1&gt;
+&lt;p&gt;下载 Gnome-Tweaks 时不小心下载成  &lt;code&gt;gnome&lt;/code&gt;  下载中途紧急中止，幸而还没有下载完全，也没有安装，因此删除 APT 下载的安装包，这里记录一下  &lt;code&gt;apt&lt;/code&gt;  删除命令及缓存清理&lt;/p&gt;
+&lt;h2 id=&#34;清理命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清理命令&#34;&gt;#&lt;/a&gt; 清理命令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt autoremove&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。（这个命令容易导致系统无法进入系统桌面）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt remove 软件包名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;删除已安装的软件包（保留配置文件）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt-get purge / apt-get --purge remove 软件包名&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;删除已安装包（不保留配置文件)，删除软件包，同时删除相应依赖软件包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt-get clean&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;此命令会将  &lt;code&gt;/var/cache/apt/archives/&lt;/code&gt;  下的 所有 deb 删掉，相当于清理下载的软件安装包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;apt-get autoclean&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;删除为了满足某些依赖安装的，但现在不再需要的软件包&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;缓存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#缓存&#34;&gt;#&lt;/a&gt; 缓存&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;/var/cache/apt/archives/&lt;/code&gt;  是  &lt;code&gt;apt&lt;/code&gt;  下载缓存的存储位置&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;参考资料-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料-3&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/xuchaoxin1375/article/details/124502453&#34;&gt;linux_apt 卸载清理 / 包检查 / 完整包名查询 / 清理已经下载的包缓存 (被打断的下载)/remove/purge/autoremove/autoclean_xuchaoxin1375 的博客 - CSDN 博客_apt 清理&lt;/a&gt;&lt;/p&gt;
+</content>
+        <updated>2024-07-19T15:30:10.828Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-20/</id>
+        <title>【Ubuntu】Github：Steam++及Git安装与配置</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-20/"/>
+        <content type="html">&lt;h1 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h1&gt;
+&lt;h2 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;%5Bhttps://steampp.net/%5D(https://steampp.net/)&#34;&gt;Steam++ 官网&lt;/a&gt;&lt;/p&gt;
@@ -19,12 +605,12 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;h5 id=&#34;安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h5&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo dpkg -i Steam++_linux_x64_[version].deb&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;h5 id=&#34;问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题&#34;&gt;#&lt;/a&gt; 问题&lt;/h5&gt;
+&lt;h2 id=&#34;问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题&#34;&gt;#&lt;/a&gt; 问题&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;端口无法监听&lt;/p&gt;
@@ -77,13 +663,13 @@
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;h3 id=&#34;git-安装及配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#git-安装及配置&#34;&gt;#&lt;/a&gt; Git 安装及配置&lt;/h3&gt;
+&lt;h1 id=&#34;git-安装及配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#git-安装及配置&#34;&gt;#&lt;/a&gt; Git 安装及配置&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Git 已经在 22-12-16 安装但未记录&lt;/p&gt;
 &lt;p&gt;22-12-20 使用 Steam&lt;ins&gt; 设置代理代替 Clash，原来使用 Clash 时需设置手动代理，给 Git 也设置了代理，在使用 Steam&lt;/ins&gt; 导致 GitHub 无法访问，删除原来的代理即可&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;h5 id=&#34;安装-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-2&#34;&gt;#&lt;/a&gt; 安装&lt;/h5&gt;
+&lt;h2 id=&#34;安装-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-2&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;更新 apt&lt;/p&gt;
@@ -97,7 +683,7 @@ sudo apt upgrade
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;h5 id=&#34;配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h5&gt;
+&lt;h2 id=&#34;配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;设置代理&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -133,7 +719,7 @@ proxy = socks5://127.0.0.1:1080
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;h5 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h5&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;初始化本地仓库&lt;/p&gt;
@@ -167,17 +753,93 @@ proxy = socks5://127.0.0.1:1080
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <updated>2024-07-19T06:38:10.343Z</updated>
+        <updated>2024-07-19T15:30:10.819Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/04/19/text1/</id>
-        <title>Log1</title>
-        <link rel="alternate" href="http://example.com/2024/04/19/text1/"/>
-        <content type="html">&lt;h3 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h3&gt;
+        <id>http://root2v.github.io/2024/07/19/log22-12-18/</id>
+        <title>【Ubuntu】安装MarkText插件</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-18/"/>
+        <content type="html">&lt;h1 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h1&gt;
+&lt;h2 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/marktext/marktext&#34;&gt;Markext - GitHub Repository&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/m0_51426055/article/details/125815180&#34;&gt;Markext 设置&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/S_AGZX/article/details/125608452&#34;&gt;MarkDown 设置翻译&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;appimage&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#appimage&#34;&gt;#&lt;/a&gt; Appimage&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;多年以来，我们一直使用 DEB packages 来管理 Debian/Ubuntu 的软件包，使用 RPM 管理 Fedora/SUSE 的软件包。&lt;/p&gt;
+&lt;p&gt;用户使用这些包管理工具可以很方便的安装软件，但是这些仍然满足不了开发人员的需求。开发人员不得不开发更多的工具。这时 AppImage 来到了我们面前。AppImage 使用通用的软件格式，通过将整个软件打包成 AppImage, 一个包包含了所有的功能。并且几乎可以在所有的 linux 发行版本中使用。&lt;/p&gt;
+&lt;p&gt;AppImage 不需要像传统的那样安装。通常我们安装 linux 软件将会在不同的目录生成多个文件，并且需要 root 权限来对系统进行修改。AppImage 不需要这么做。事实上，AppImage 并不需要安装。AppImage 是一个压缩的镜像文件，它包含所有运行所需要的依赖和库文件。你可以直接执行 AppImage 文件不需要安装。当你把 AppImage 文件删除，整个软件也被删除了。你可以把它当成 windows 系统中的那些免安装的 exe 文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;AppImage 的特性或者优点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;可以运行在各种平台&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不需要安装，直接执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;便携性：可以在位置执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;App 只读&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;卸载便利，只需要删除 AppImage 文件即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不需要 root 权限，不需要修改系统文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chmod +x app.appimage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3 id=&#34;安装appimagelancher&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装appimagelancher&#34;&gt;#&lt;/a&gt; 安装 Appimagelancher&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sudo apt install software-properties-common&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:appimagelauncher-team/stable&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sudo apt update&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sudo apt install appimagelauncher&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3 id=&#34;运行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运行&#34;&gt;#&lt;/a&gt; 运行&lt;/h3&gt;
+&lt;p&gt;MarkText 时会自动打开 Appimagelancher，会自动添加快捷方式到程序列表&lt;/p&gt;
+</content>
+        <updated>2024-07-19T15:30:10.815Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-16/</id>
+        <title>【Ubuntu】双系统引导及基础配置</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-16/"/>
+        <content type="html">&lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;MBR GPT 区别&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;开机没有系统选择界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开机没有系统选择界面&#34;&gt;#&lt;/a&gt; 开机没有系统选择界面&lt;/h3&gt;
+&lt;h1 id=&#34;开机没有系统选择界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开机没有系统选择界面&#34;&gt;#&lt;/a&gt; 开机没有系统选择界面&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;使用 boot-repairs 修复引导程序
 &lt;ul&gt;
@@ -196,26 +858,26 @@ proxy = socks5://127.0.0.1:1080
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;主文件目录中文文件名改为英文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#主文件目录中文文件名改为英文&#34;&gt;#&lt;/a&gt; 主文件目录中文文件名改为英文&lt;/h3&gt;
+&lt;h1 id=&#34;主文件目录中文文件名改为英文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#主文件目录中文文件名改为英文&#34;&gt;#&lt;/a&gt; 主文件目录中文文件名改为英文&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;切换语言，中文切换到英文，重启后同意更改文件名&lt;/li&gt;
 &lt;li&gt;再从英文切换到中文，重启后不同意更改文件名且不再提醒&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;安装浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装浏览器&#34;&gt;#&lt;/a&gt; 安装浏览器&lt;/h3&gt;
+&lt;h1 id=&#34;安装浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装浏览器&#34;&gt;#&lt;/a&gt; 安装浏览器&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;chrome&lt;/li&gt;
 &lt;li&gt;edge&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;vpn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vpn&#34;&gt;#&lt;/a&gt; VPN&lt;/h3&gt;
+&lt;h1 id=&#34;vpn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vpn&#34;&gt;#&lt;/a&gt; VPN&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;仅渡口没有 clash&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;替换grub主题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#替换grub主题&#34;&gt;#&lt;/a&gt; 替换 grub 主题&lt;/h3&gt;
+&lt;h1 id=&#34;替换grub主题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#替换grub主题&#34;&gt;#&lt;/a&gt; 替换 grub 主题&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.gnome-look.org/browse/cat/109/&#34;&gt;grub 主题资源&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;其中一个主题 dedsec ，运行 pyton 脚本后需要更新 grub，且网站上的资源不能用，github 上的仓库可以用&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;修改分区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改分区&#34;&gt;#&lt;/a&gt; 修改分区&lt;/h3&gt;
+&lt;h1 id=&#34;修改分区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改分区&#34;&gt;#&lt;/a&gt; 修改分区&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;没有尝试，暂时根目录够用&lt;/li&gt;
 &lt;li&gt;根目录分区多给点，因为很多软件默认安装在根目录&lt;/li&gt;
@@ -225,16 +887,16 @@ proxy = socks5://127.0.0.1:1080
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;安装vscode&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装vscode&#34;&gt;#&lt;/a&gt; 安装 vscode&lt;/h3&gt;
-&lt;h3 id=&#34;vscode-markdown&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vscode-markdown&#34;&gt;#&lt;/a&gt; vscode markdown&lt;/h3&gt;
+&lt;h1 id=&#34;安装vscode&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装vscode&#34;&gt;#&lt;/a&gt; 安装 vscode&lt;/h1&gt;
+&lt;h1 id=&#34;vscode-markdown&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vscode-markdown&#34;&gt;#&lt;/a&gt; vscode markdown&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Markdown All in One&lt;/li&gt;
 &lt;li&gt;Markdown Preview Enhanced&lt;/li&gt;
 &lt;li&gt;Paste Image&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;安装git建立一个linux操作日志&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装git建立一个linux操作日志&#34;&gt;#&lt;/a&gt; 安装 git，建立一个 linux 操作日志&lt;/h3&gt;
-&lt;h3 id=&#34;修改输入法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改输入法&#34;&gt;#&lt;/a&gt; 修改输入法&lt;/h3&gt;
-&lt;h3 id=&#34;安装clash&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装clash&#34;&gt;#&lt;/a&gt; 安装 Clash&lt;/h3&gt;
+&lt;h1 id=&#34;安装git建立一个linux操作日志&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装git建立一个linux操作日志&#34;&gt;#&lt;/a&gt; 安装 git，建立一个 linux 操作日志&lt;/h1&gt;
+&lt;h1 id=&#34;修改输入法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改输入法&#34;&gt;#&lt;/a&gt; 修改输入法&lt;/h1&gt;
+&lt;h1 id=&#34;安装clash&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装clash&#34;&gt;#&lt;/a&gt; 安装 Clash&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;相关教程
 &lt;ul&gt;
@@ -270,12 +932,12 @@ proxy = socks5://127.0.0.1:1080
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;修改默认浏览器为-edge&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改默认浏览器为-edge&#34;&gt;#&lt;/a&gt; 修改默认浏览器为 edge&lt;/h3&gt;
+&lt;h1 id=&#34;修改默认浏览器为-edge&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改默认浏览器为-edge&#34;&gt;#&lt;/a&gt; 修改默认浏览器为 edge&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo update-alternatives --config x-www-browser&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;设置 =&amp;gt; 默认应用程序 =&amp;gt; 浏览器&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;ubuntu2204lts-安装-imagemagick源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu2204lts-安装-imagemagick源码&#34;&gt;#&lt;/a&gt; Ubuntu22.04LTS 安装 ImageMagick (源码)&lt;/h3&gt;
+&lt;h1 id=&#34;ubuntu2204lts-安装-imagemagick源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu2204lts-安装-imagemagick源码&#34;&gt;#&lt;/a&gt; Ubuntu22.04LTS 安装 ImageMagick (源码)&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.xtuos.com/5754.html&#34;&gt;如何在 Ubuntu 22.04 LTS 上安装 ImageMagick&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;升级库和安装依赖
@@ -312,12 +974,158 @@ proxy = socks5://127.0.0.1:1080
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
+        <updated>2024-07-19T15:30:10.799Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/04/19/text1/</id>
+        <title>Log1</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/04/19/text1/"/>
+        <content type="html">&lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;MBR GPT 区别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;开机没有系统选择界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开机没有系统选择界面&#34;&gt;#&lt;/a&gt; 开机没有系统选择界面&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 boot-repairs 修复引导程序
+&lt;ul&gt;
+&lt;li&gt;有报错，uefi 和 legecy 冲突，改 bios 设置为 uefi（或仅 uefi）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;重启后更新 grub
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo update-grub&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo update-grub2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;知识点
+&lt;ul&gt;
+&lt;li&gt;学习&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;主文件目录中文文件名改为英文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#主文件目录中文文件名改为英文&#34;&gt;#&lt;/a&gt; 主文件目录中文文件名改为英文&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;切换语言，中文切换到英文，重启后同意更改文件名&lt;/li&gt;
+&lt;li&gt;再从英文切换到中文，重启后不同意更改文件名且不再提醒&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装浏览器&#34;&gt;#&lt;/a&gt; 安装浏览器&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;chrome&lt;/li&gt;
+&lt;li&gt;edge&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;vpn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vpn&#34;&gt;#&lt;/a&gt; VPN&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;仅渡口没有 clash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;替换grub主题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#替换grub主题&#34;&gt;#&lt;/a&gt; 替换 grub 主题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnome-look.org/browse/cat/109/&#34;&gt;grub 主题资源&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;其中一个主题 dedsec ，运行 pyton 脚本后需要更新 grub，且网站上的资源不能用，github 上的仓库可以用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;修改分区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改分区&#34;&gt;#&lt;/a&gt; 修改分区&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;没有尝试，暂时根目录够用&lt;/li&gt;
+&lt;li&gt;根目录分区多给点，因为很多软件默认安装在根目录&lt;/li&gt;
+&lt;li&gt;有需要可以尝试的方法
+&lt;ul&gt;
+&lt;li&gt;gparted（可能需要借助 u 盘，因为 ubuntu 无法卸载正在使用的挂在点，/home 的进程非常多，一旦杀掉就死机）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装vscode&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装vscode&#34;&gt;#&lt;/a&gt; 安装 vscode&lt;/h1&gt;
+&lt;h1 id=&#34;vscode-markdown&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vscode-markdown&#34;&gt;#&lt;/a&gt; vscode markdown&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Markdown All in One&lt;/li&gt;
+&lt;li&gt;Markdown Preview Enhanced&lt;/li&gt;
+&lt;li&gt;Paste Image&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装git建立一个linux操作日志&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装git建立一个linux操作日志&#34;&gt;#&lt;/a&gt; 安装 git，建立一个 linux 操作日志&lt;/h1&gt;
+&lt;h1 id=&#34;修改输入法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改输入法&#34;&gt;#&lt;/a&gt; 修改输入法&lt;/h1&gt;
+&lt;h1 id=&#34;安装clash&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装clash&#34;&gt;#&lt;/a&gt; 安装 Clash&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;相关教程
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/mozhen/p/16306061.html&#34;&gt;桌面版下载教程及桌面图标设置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/430035973&#34;&gt;命令行下载教程及自定义 service 设置&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;安装过程整理&lt;/li&gt;
+&lt;li&gt;问题
+&lt;ul&gt;
+&lt;li&gt;安装完成后需要通过界面点击&lt;a href=&#34;https://clash.razord.top/&#34;&gt; Clash Core&lt;/a&gt; 打开&lt;strong&gt;网页端&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;不通过桌面端需要配置&lt;strong&gt;主机端口&lt;/strong&gt;及&lt;strong&gt;密钥&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;只需打开一次&lt;/strong&gt;，此后直接打开桌面端即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;关闭 clash 后主机由于代理设置不能正常访问网络，需要关闭代理
+&lt;ul&gt;
+&lt;li&gt;测试：主机关闭代理设置，网页端 -&amp;gt; 设置 -&amp;gt; 设置为系统代理&lt;/li&gt;
+&lt;li&gt;自动化：设置自定义服务，在退出时执行关闭代理命令（或者直接修改 clash 本身的 quit 相关脚本）
+&lt;ul&gt;
+&lt;li&gt;测试 hellotest.service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;确定 clash 的打开方式，方便快捷
+&lt;ul&gt;
+&lt;li&gt;最终添加快捷方式&lt;/li&gt;
+&lt;li&gt;将 &lt;code&gt;clash.desktop&lt;/code&gt;  添加到 &lt;code&gt;/usr/share/applications&lt;/code&gt;  可以在 “显示应用程序” 中显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;修改默认浏览器为-edge&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改默认浏览器为-edge&#34;&gt;#&lt;/a&gt; 修改默认浏览器为 edge&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo update-alternatives --config x-www-browser&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置 =&amp;gt; 默认应用程序 =&amp;gt; 浏览器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;ubuntu2204lts-安装-imagemagick源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu2204lts-安装-imagemagick源码&#34;&gt;#&lt;/a&gt; Ubuntu22.04LTS 安装 ImageMagick (源码)&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.xtuos.com/5754.html&#34;&gt;如何在 Ubuntu 22.04 LTS 上安装 ImageMagick&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;升级库和安装依赖
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo apt update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt upgrade&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安装 gcc、build build-essential、make&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt install make build-essential automake libltdl-dev git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从 github 上下载源码（网络问题没 clone）
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ImageMagick/ImageMagick&#34;&gt;Github : ImageMagick - repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;unzip [file-name]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd [file-name]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;初始化
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./configure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure --with-modules&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;编译
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo make&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo make install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;动态链接库
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo ldconfig /usr/local/lib&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption data-lang=&#34;c&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;test_func&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;u32&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; pbuf&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; u16 len&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; len&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; pbug&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;测试&lt;/p&gt;
+</content>
         <updated>2024-04-19T14:29:19.654Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/04/19/hello-world/</id>
+        <id>http://root2v.github.io/2024/04/19/hello-world/</id>
         <title>Hello World</title>
-        <link rel="alternate" href="http://example.com/2024/04/19/hello-world/"/>
+        <link rel="alternate" href="http://root2v.github.io/2024/04/19/hello-world/"/>
         <content type="html">&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
 &lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
