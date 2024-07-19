@@ -3,7 +3,172 @@
     <id>http://example.com</id>
     <title>ROOTX</title>
     <link href="http://example.com" />
-    <updated>2024-04-19T14:29:19.654Z</updated>
+    <updated>2024-07-19T06:38:10.343Z</updated>
+    <entry>
+        <id>http://example.com/2024/07/19/log22-12-20/</id>
+        <title></title>
+        <link rel="alternate" href="http://example.com/2024/07/19/log22-12-20/"/>
+        <content type="html">&lt;h3 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h3&gt;
+&lt;h5 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;%5Bhttps://steampp.net/%5D(https://steampp.net/)&#34;&gt;Steam++ 官网&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;会下载一个集合包，包含了各个平台的安装包，选择 Linux 的 deb 安装包&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h5 id=&#34;安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo dpkg -i Steam++_linux_x64_[version].deb&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h5 id=&#34;问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#问题&#34;&gt;#&lt;/a&gt; 问题&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;端口无法监听&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;Steam++_linux_x64_v2.8.4.deb&#34;&gt;官方解决办法原文&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;命令允许程序监听 1024 以下端口&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo setcap cap_net_bind_service=+eip /usr/share/Steam++/Steam++&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host 文件读取权限受限&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;仅限于 Host 代理模式下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;避免每次启动关闭加速需要输入密码，打开终端执行以下命令： &lt;code&gt;sudo chmod a+w /etc/hosts&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如输入上面命令还提示无法 hosts 错误请尝试执行下面命令： &lt;code&gt;sudo chmod a+r /etc/hosts&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;被浏览器拦截&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;显示 “不是专有连接” 等提示，无效证书&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;解决办法：在浏览器设置中导入证书，从 &lt;code&gt;颁发机构&lt;/code&gt; 导入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;证书本地存放地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;~/.local/share/Steam++&lt;/code&gt; (用户文件夹下)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过 GUI 打开： &lt;code&gt;网络加速&lt;/code&gt;  =&amp;gt;  &lt;code&gt;...&lt;/code&gt;  =&amp;gt;  &lt;code&gt;打开证书文件夹&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3 id=&#34;git-安装及配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#git-安装及配置&#34;&gt;#&lt;/a&gt; Git 安装及配置&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Git 已经在 22-12-16 安装但未记录&lt;/p&gt;
+&lt;p&gt;22-12-20 使用 Steam&lt;ins&gt; 设置代理代替 Clash，原来使用 Clash 时需设置手动代理，给 Git 也设置了代理，在使用 Steam&lt;/ins&gt; 导致 GitHub 无法访问，删除原来的代理即可&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h5 id=&#34;安装-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-2&#34;&gt;#&lt;/a&gt; 安装&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;更新 apt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载 Git&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt install git&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h5 id=&#34;配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设置代理&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用命令设置 socks 或者 http 代理&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# http
+git config --global http.proxy http://127.0.0.1:8080
+git config --global https.proxy https://127.0.0.1:8080
+
+# socks
+git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39; 
+git config --global https.proxy &#39;socks5://127.0.0.1:1080&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用命令行取消代理&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global --unset http.proxy
+git config --global --unset https.proxy http
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直接修改.gitconfig 文件，新建或修改以下内容&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vim ~/.gitconfig&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[http]
+
+proxy = socks5://127.0.0.1:1080
+
+[https]
+
+proxy = socks5://127.0.0.1:1080
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h5 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;初始化本地仓库&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新修改&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提交版本到本地&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git commit -m &#39;版本号&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加远程仓库链接&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git remote add origin [repository address]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新本地文件到远程仓库&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于远程库是空的，我们第一次推送 &lt;code&gt;master&lt;/code&gt;  分支时，加上了 &lt;code&gt;-u&lt;/code&gt;  参数，Git 不但会把本地的 &lt;code&gt;master&lt;/code&gt;  分支内容推送的远程新的 &lt;code&gt;master&lt;/code&gt;  分支，还会把本地的 &lt;code&gt;master&lt;/code&gt;  分支和远程的 &lt;code&gt;master&lt;/code&gt;  分支关联起来，在以后的推送或者拉取时就可以简化命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <updated>2024-07-19T06:38:10.343Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/04/19/text1/</id>
         <title>Log1</title>
