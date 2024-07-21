@@ -1,18 +1,14 @@
 <?xml version="1.0"?>
-<rss version="2.0">
-    <channel>
-        <title>ROOTX</title>
-        <link>http://root2v.github.io</link>
-        <description>rootx space</description>
-        <language>zh-CN</language>
-        <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-        <lastBuildDate>Fri, 19 Jul 2024 23:30:10 +0800</lastBuildDate>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log23-04-11/</guid>
-            <title>【Ubuntu】卸载GTK+3导致GNOME崩溃</title>
-            <link>http://root2v.github.io/2024/07/19/log23-04-11/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;&amp;lt;iframe src=&amp;quot;&lt;a href=&#34;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&#34;&gt;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&lt;/a&gt;&amp;quot; scrolling=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;no&amp;quot; framespacing=&amp;quot;0&amp;quot; allowfullscreen=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://root2v.github.io</id>
+    <title>ROOTX • Posts by &#34;ubuntu&#34; category</title>
+    <link href="http://root2v.github.io" />
+    <updated>2024-07-19T15:30:10.869Z</updated>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-04-11/</id>
+        <title>【Ubuntu】卸载GTK+3导致GNOME崩溃</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-04-11/"/>
+        <content type="html">&lt;p&gt;&amp;lt;iframe src=&amp;quot;&lt;a href=&#34;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&#34;&gt;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&lt;/a&gt;&amp;quot; scrolling=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;no&amp;quot; framespacing=&amp;quot;0&amp;quot; allowfullscreen=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
 &lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近运行一个软件需要用到 gtk 环境，下载 gtk+3 不能使用，打算卸载重装 gtk+2，卸载后  &lt;code&gt;gnome&lt;/code&gt;  疑似崩溃：&lt;/p&gt;
@@ -43,14 +39,14 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_35386301/article/details/115374530&#34;&gt;ubuntu 进不去图形化界面系统解决方案_haley.du 的博客 - CSDN 博客&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log23-01-12/</guid>
-            <title>【Ubuntu】游戏手柄库安装</title>
-            <link>http://root2v.github.io/2024/07/19/log23-01-12/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;游戏手柄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#游戏手柄&#34;&gt;#&lt;/a&gt; 游戏手柄&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.869Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-01-12/</id>
+        <title>【Ubuntu】游戏手柄库安装</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-12/"/>
+        <content type="html">&lt;h1 id=&#34;游戏手柄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#游戏手柄&#34;&gt;#&lt;/a&gt; 游戏手柄&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;Python 开发游戏时想加入手柄&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
@@ -72,14 +68,14 @@
 &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jrc_january/article/details/74537363&#34;&gt;在 UBUNTU 中使用北通 USB 游戏手柄_rongchun.ji 的博客 - CSDN 博客_ubuntu 安装北通游戏手柄驱动&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/eastcnme/article/details/124966204&#34;&gt;xbox one 无线手柄在 ubuntu 下的对接开发_xboxdrv_Embedded engineer 的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log23-01-05/</guid>
-            <title>【Ubuntu】安装微信</title>
-            <link>http://root2v.github.io/2024/07/19/log23-01-05/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;安装微信&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.865Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-01-05/</id>
+        <title>【Ubuntu】安装微信</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-05/"/>
+        <content type="html">&lt;h1 id=&#34;安装微信&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近转手机文件太麻烦了，所以安装一个微信&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
@@ -138,14 +134,14 @@
 &lt;h2 id=&#34;安装获取直链脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装获取直链脚本&#34;&gt;#&lt;/a&gt; 安装获取直链脚本&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/436446-%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B&#34;&gt;网盘直链下载助手&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log23-01-02/</guid>
-            <title>【Ubuntu】安装网易云音乐</title>
-            <link>http://root2v.github.io/2024/07/19/log23-01-02/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;安装网易云音乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装网易云音乐&#34;&gt;#&lt;/a&gt; 安装网易云音乐&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.855Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log23-01-02/</id>
+        <title>【Ubuntu】安装网易云音乐</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-02/"/>
+        <content type="html">&lt;h1 id=&#34;安装网易云音乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装网易云音乐&#34;&gt;#&lt;/a&gt; 安装网易云音乐&lt;/h1&gt;
 &lt;h2 id=&#34;特别说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特别说明&#34;&gt;#&lt;/a&gt; 特别说明&lt;/h2&gt;
 &lt;p&gt;根据网上的教程安装出现了一些问题：&lt;/p&gt;
 &lt;ul&gt;
@@ -259,14 +255,14 @@
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/m0_59673430/article/details/119863445&#34;&gt;Ubuntu 中 locate 命令缺失解决方法_Dory_Youth 的博客 - CSDN 博客_ubuntu locate&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.iteye.com/blog/312788172-730280&#34;&gt;linux 下 which、whereis、locate、find 命令的区别&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yucan1001/article/details/8451169&#34;&gt;which、whereis、locate、find 命令用法_肥萝卜使大力的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log22-12-31/</guid>
-            <title>【Ubuntu】GNOME安装及使用</title>
-            <link>http://root2v.github.io/2024/07/19/log22-12-31/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;gnome安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gnome安装及使用&#34;&gt;#&lt;/a&gt; GNOME 安装及使用&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.841Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-31/</id>
+        <title>【Ubuntu】GNOME安装及使用</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-31/"/>
+        <content type="html">&lt;h1 id=&#34;gnome安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gnome安装及使用&#34;&gt;#&lt;/a&gt; GNOME 安装及使用&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;本机使用的系统版本为 Ubuntu22.04 ，自带 gnome42 ，据说和原版 gnome 有区别，但我在使用中并未发现问题，因此就不重新安装 gnome 桌面了，直接添加 gnome 工具，以下是参考文章 &lt;a href=&#34;https://bytexd.com/how-to-install-gnome-desktop-in-ubuntu/&#34;&gt;How to Install GNOME Desktop in Ubuntu 22.04 or 20.04&lt;/a&gt; 中的一段话，感觉应该是说 Ubuntu 的 Gnome 算是一个为了与 Ubuntu 集成的特别版&lt;/p&gt;
 &lt;blockquote&gt;
@@ -440,14 +436,14 @@
 &lt;hr /&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;h1 id=&#34;python-安装-pygame-库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#python-安装-pygame-库&#34;&gt;#&lt;/a&gt; Python 安装 pygame 库&lt;/h1&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; pip3 &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; pygame&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log22-12-29/</guid>
-            <title>【Ubuntu】Ubuntu Windows(Win10)双系统时间不同步</title>
-            <link>http://root2v.github.io/2024/07/19/log22-12-29/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ubuntu-windowswin10双系统时间不同步&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-windowswin10双系统时间不同步&#34;&gt;#&lt;/a&gt; Ubuntu Windows (Win10) 双系统时间不同步&lt;/h1&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; pip3 &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; pygame&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <updated>2024-07-19T15:30:10.832Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-29/</id>
+        <title>【Ubuntu】Ubuntu Windows(Win10)双系统时间不同步</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-29/"/>
+        <content type="html">&lt;h1 id=&#34;ubuntu-windowswin10双系统时间不同步&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-windowswin10双系统时间不同步&#34;&gt;#&lt;/a&gt; Ubuntu Windows (Win10) 双系统时间不同步&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;使用 Win10 玩游戏，发现每次登陆 Steam 上的游戏时发现提示当前存档和云存档进度不一，本地存档较新，每次退出游戏时即便等待 Steam 更新云存档完成还是会报警告&lt;br /&gt;
 ，这时发现每次登陆系统时间与当地时间不符，Steam 应该是通过存档时间判断，本地存档时系统时间不正确，记录了一个错误时间，校准过系统时间后再登陆游戏存档，退出重新登陆时就不会有问题了，但是为什么每次登陆时 Windows 系统时间会不准？查阅资料发现，是 Windows 和 Ubuntu 对 BIOS 时间的处理不同，最终通过 Ubuntu 的 &lt;code&gt;timedatectl&lt;/code&gt;  时间管理工具修改 Ubuntu 设置解决&lt;/p&gt;
@@ -592,14 +588,14 @@
 &lt;p&gt; &lt;/p&gt;
 &lt;h2 id=&#34;参考资料-3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#参考资料-3&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/xuchaoxin1375/article/details/124502453&#34;&gt;linux_apt 卸载清理 / 包检查 / 完整包名查询 / 清理已经下载的包缓存 (被打断的下载)/remove/purge/autoremove/autoclean_xuchaoxin1375 的博客 - CSDN 博客_apt 清理&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log22-12-20/</guid>
-            <title>【Ubuntu】Github：Steam++及Git安装与配置</title>
-            <link>http://root2v.github.io/2024/07/19/log22-12-20/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.828Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-20/</id>
+        <title>【Ubuntu】Github：Steam++及Git安装与配置</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-20/"/>
+        <content type="html">&lt;h1 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h1&gt;
 &lt;h2 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -757,14 +753,14 @@ proxy = socks5://127.0.0.1:1080
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log22-12-18/</guid>
-            <title>【Ubuntu】安装MarkText插件</title>
-            <link>http://root2v.github.io/2024/07/19/log22-12-18/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.819Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-18/</id>
+        <title>【Ubuntu】安装MarkText插件</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-18/"/>
+        <content type="html">&lt;h1 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h1&gt;
 &lt;h2 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -833,14 +829,14 @@ proxy = socks5://127.0.0.1:1080
 &lt;p&gt; &lt;/p&gt;
 &lt;h3 id=&#34;运行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运行&#34;&gt;#&lt;/a&gt; 运行&lt;/h3&gt;
 &lt;p&gt;MarkText 时会自动打开 Appimagelancher，会自动添加快捷方式到程序列表&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/07/19/log22-12-16/</guid>
-            <title>【Ubuntu】双系统引导及基础配置</title>
-            <link>http://root2v.github.io/2024/07/19/log22-12-16/</link>
-            <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
+</content>
+        <updated>2024-07-19T15:30:10.815Z</updated>
+    </entry>
+    <entry>
+        <id>http://root2v.github.io/2024/07/19/log22-12-16/</id>
+        <title>【Ubuntu】双系统引导及基础配置</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-16/"/>
+        <content type="html">&lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;MBR GPT 区别&lt;/li&gt;
 &lt;/ul&gt;
@@ -978,170 +974,7 @@ proxy = socks5://127.0.0.1:1080
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/04/19/text1/</guid>
-            <title>Log1</title>
-            <link>http://root2v.github.io/2024/04/19/text1/</link>
-            <pubDate>Fri, 19 Apr 2024 22:29:19 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;MBR GPT 区别&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;开机没有系统选择界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开机没有系统选择界面&#34;&gt;#&lt;/a&gt; 开机没有系统选择界面&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;使用 boot-repairs 修复引导程序
-&lt;ul&gt;
-&lt;li&gt;有报错，uefi 和 legecy 冲突，改 bios 设置为 uefi（或仅 uefi）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;重启后更新 grub
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo update-grub&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo update-grub2&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;知识点
-&lt;ul&gt;
-&lt;li&gt;学习&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;主文件目录中文文件名改为英文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#主文件目录中文文件名改为英文&#34;&gt;#&lt;/a&gt; 主文件目录中文文件名改为英文&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;切换语言，中文切换到英文，重启后同意更改文件名&lt;/li&gt;
-&lt;li&gt;再从英文切换到中文，重启后不同意更改文件名且不再提醒&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;安装浏览器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装浏览器&#34;&gt;#&lt;/a&gt; 安装浏览器&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;chrome&lt;/li&gt;
-&lt;li&gt;edge&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;vpn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vpn&#34;&gt;#&lt;/a&gt; VPN&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;仅渡口没有 clash&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;替换grub主题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#替换grub主题&#34;&gt;#&lt;/a&gt; 替换 grub 主题&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.gnome-look.org/browse/cat/109/&#34;&gt;grub 主题资源&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;其中一个主题 dedsec ，运行 pyton 脚本后需要更新 grub，且网站上的资源不能用，github 上的仓库可以用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;修改分区&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改分区&#34;&gt;#&lt;/a&gt; 修改分区&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;没有尝试，暂时根目录够用&lt;/li&gt;
-&lt;li&gt;根目录分区多给点，因为很多软件默认安装在根目录&lt;/li&gt;
-&lt;li&gt;有需要可以尝试的方法
-&lt;ul&gt;
-&lt;li&gt;gparted（可能需要借助 u 盘，因为 ubuntu 无法卸载正在使用的挂在点，/home 的进程非常多，一旦杀掉就死机）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;安装vscode&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装vscode&#34;&gt;#&lt;/a&gt; 安装 vscode&lt;/h1&gt;
-&lt;h1 id=&#34;vscode-markdown&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vscode-markdown&#34;&gt;#&lt;/a&gt; vscode markdown&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Markdown All in One&lt;/li&gt;
-&lt;li&gt;Markdown Preview Enhanced&lt;/li&gt;
-&lt;li&gt;Paste Image&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;安装git建立一个linux操作日志&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装git建立一个linux操作日志&#34;&gt;#&lt;/a&gt; 安装 git，建立一个 linux 操作日志&lt;/h1&gt;
-&lt;h1 id=&#34;修改输入法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改输入法&#34;&gt;#&lt;/a&gt; 修改输入法&lt;/h1&gt;
-&lt;h1 id=&#34;安装clash&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装clash&#34;&gt;#&lt;/a&gt; 安装 Clash&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;相关教程
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/mozhen/p/16306061.html&#34;&gt;桌面版下载教程及桌面图标设置&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/430035973&#34;&gt;命令行下载教程及自定义 service 设置&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;安装过程整理&lt;/li&gt;
-&lt;li&gt;问题
-&lt;ul&gt;
-&lt;li&gt;安装完成后需要通过界面点击&lt;a href=&#34;https://clash.razord.top/&#34;&gt; Clash Core&lt;/a&gt; 打开&lt;strong&gt;网页端&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;不通过桌面端需要配置&lt;strong&gt;主机端口&lt;/strong&gt;及&lt;strong&gt;密钥&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;只需打开一次&lt;/strong&gt;，此后直接打开桌面端即可&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;关闭 clash 后主机由于代理设置不能正常访问网络，需要关闭代理
-&lt;ul&gt;
-&lt;li&gt;测试：主机关闭代理设置，网页端 -&amp;gt; 设置 -&amp;gt; 设置为系统代理&lt;/li&gt;
-&lt;li&gt;自动化：设置自定义服务，在退出时执行关闭代理命令（或者直接修改 clash 本身的 quit 相关脚本）
-&lt;ul&gt;
-&lt;li&gt;测试 hellotest.service&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;确定 clash 的打开方式，方便快捷
-&lt;ul&gt;
-&lt;li&gt;最终添加快捷方式&lt;/li&gt;
-&lt;li&gt;将 &lt;code&gt;clash.desktop&lt;/code&gt;  添加到 &lt;code&gt;/usr/share/applications&lt;/code&gt;  可以在 “显示应用程序” 中显示&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;修改默认浏览器为-edge&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改默认浏览器为-edge&#34;&gt;#&lt;/a&gt; 修改默认浏览器为 edge&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo update-alternatives --config x-www-browser&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;设置 =&amp;gt; 默认应用程序 =&amp;gt; 浏览器&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;ubuntu2204lts-安装-imagemagick源码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu2204lts-安装-imagemagick源码&#34;&gt;#&lt;/a&gt; Ubuntu22.04LTS 安装 ImageMagick (源码)&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.xtuos.com/5754.html&#34;&gt;如何在 Ubuntu 22.04 LTS 上安装 ImageMagick&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;升级库和安装依赖
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo apt update&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt upgrade&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;安装 gcc、build build-essential、make&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo apt install make build-essential automake libltdl-dev git&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;从 github 上下载源码（网络问题没 clone）
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ImageMagick/ImageMagick&#34;&gt;Github : ImageMagick - repository&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;unzip [file-name]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd [file-name]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;初始化
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;./configure&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./configure --with-modules&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;编译
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo make&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sudo make install&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;动态链接库
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sudo ldconfig /usr/local/lib&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption data-lang=&#34;c&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;test_func&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;u32&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; pbuf&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; u16 len&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; len&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; pbug&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;测试&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://root2v.github.io/2024/04/19/hello-world/</guid>
-            <title>Hello World</title>
-            <link>http://root2v.github.io/2024/04/19/hello-world/</link>
-            <pubDate>Fri, 19 Apr 2024 17:22:27 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/writing.html&#34;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/server.html&#34;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/generating.html&#34;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/one-command-deployment.html&#34;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-    </channel>
-</rss>
+</content>
+        <updated>2024-07-19T15:30:10.799Z</updated>
+    </entry>
+</feed>

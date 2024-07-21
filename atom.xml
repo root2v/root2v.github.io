@@ -8,7 +8,8 @@
         <id>http://root2v.github.io/2024/07/19/log23-04-11/</id>
         <title>【Ubuntu】卸载GTK+3导致GNOME崩溃</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-04-11/"/>
-        <content type="html">&lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
+        <content type="html">&lt;p&gt;&amp;lt;iframe src=&amp;quot;&lt;a href=&#34;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&#34;&gt;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&lt;/a&gt;&amp;quot; scrolling=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;no&amp;quot; framespacing=&amp;quot;0&amp;quot; allowfullscreen=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+&lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近运行一个软件需要用到 gtk 环境，下载 gtk+3 不能使用，打算卸载重装 gtk+2，卸载后  &lt;code&gt;gnome&lt;/code&gt;  疑似崩溃：&lt;/p&gt;
 &lt;ul&gt;
