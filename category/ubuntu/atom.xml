@@ -3,13 +3,12 @@
     <id>http://root2v.github.io</id>
     <title>ROOTX • Posts by &#34;ubuntu&#34; category</title>
     <link href="http://root2v.github.io" />
-    <updated>2024-07-19T15:30:10.869Z</updated>
+    <updated>2024-07-22T16:46:38.923Z</updated>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log23-04-11/</id>
-        <title>【Ubuntu】卸载GTK+3导致GNOME崩溃</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-04-11/"/>
-        <content type="html">&lt;p&gt;&amp;lt;iframe src=&amp;quot;&lt;a href=&#34;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&#34;&gt;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=1852083701&amp;amp;bvid=BV1ap42127GE&amp;amp;cid=1476463405&amp;amp;p=1&lt;/a&gt;&amp;quot; scrolling=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;no&amp;quot; framespacing=&amp;quot;0&amp;quot; allowfullscreen=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
-&lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
+        <id>http://root2v.github.io/2024/07/23/Ubuntu/log23-04-11/</id>
+        <title>【Ubuntu】双系统安装记录（九）：卸载GTK+3导致GNOME崩溃</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/23/Ubuntu/log23-04-11/"/>
+        <content type="html">&lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近运行一个软件需要用到 gtk 环境，下载 gtk+3 不能使用，打算卸载重装 gtk+2，卸载后  &lt;code&gt;gnome&lt;/code&gt;  疑似崩溃：&lt;/p&gt;
 &lt;ul&gt;
@@ -40,12 +39,12 @@
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/qq_35386301/article/details/115374530&#34;&gt;ubuntu 进不去图形化界面系统解决方案_haley.du 的博客 - CSDN 博客&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <updated>2024-07-19T15:30:10.869Z</updated>
+        <updated>2024-07-22T16:46:38.923Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log23-01-12/</id>
-        <title>【Ubuntu】游戏手柄库安装</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-12/"/>
+        <id>http://root2v.github.io/2024/07/23/Ubuntu/log23-01-12/</id>
+        <title>【Ubuntu】双系统安装记录（八）：游戏手柄库安装</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/23/Ubuntu/log23-01-12/"/>
         <content type="html">&lt;h1 id=&#34;游戏手柄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#游戏手柄&#34;&gt;#&lt;/a&gt; 游戏手柄&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;Python 开发游戏时想加入手柄&lt;/p&gt;
@@ -69,12 +68,12 @@
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jrc_january/article/details/74537363&#34;&gt;在 UBUNTU 中使用北通 USB 游戏手柄_rongchun.ji 的博客 - CSDN 博客_ubuntu 安装北通游戏手柄驱动&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/eastcnme/article/details/124966204&#34;&gt;xbox one 无线手柄在 ubuntu 下的对接开发_xboxdrv_Embedded engineer 的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
 </content>
-        <updated>2024-07-19T15:30:10.865Z</updated>
+        <updated>2024-07-22T16:46:38.921Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log23-01-05/</id>
-        <title>【Ubuntu】安装微信</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-05/"/>
+        <id>http://root2v.github.io/2024/07/23/Ubuntu/log23-01-05/</id>
+        <title>【Ubuntu】双系统安装记录（七）：安装微信和百度网盘</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/23/Ubuntu/log23-01-05/"/>
         <content type="html">&lt;h1 id=&#34;安装微信&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近转手机文件太麻烦了，所以安装一个微信&lt;/p&gt;
@@ -122,25 +121,26 @@
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yqq1997/article/details/128093339&#34;&gt;解决 Ubuntu22.04 微信打不开的问题_youngqqcn 的博客 - CSDN 博客_ubuntu 安装微信打不开&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/zq1997/deepin-wine/issues/312&#34;&gt;ubuntu 22.04.1 安装依赖问题・Issue #312・zq1997/deepin-wine・GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&amp;lt;hr&amp;gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
 &lt;h1 id=&#34;百度云盘加速&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#百度云盘加速&#34;&gt;#&lt;/a&gt; 百度云盘加速&lt;/h1&gt;
 &lt;h2 id=&#34;概述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述-2&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;事实上不只限于百度网盘，这个主要是多线程下载&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;h2 id=&#34;aria2-安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aria2-安装及使用&#34;&gt;#&lt;/a&gt; Aria2 安装及使用&lt;/h2&gt;
-&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; aria2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h1&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; aria2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
 &lt;p&gt;有的链接需要加双引号，否则会下载失败&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;aria2c 下载链接地址&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt; &lt;/p&gt;
 &lt;h2 id=&#34;安装获取直链脚本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装获取直链脚本&#34;&gt;#&lt;/a&gt; 安装获取直链脚本&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts/436446-%E7%BD%91%E7%9B%98%E7%9B%B4%E9%93%BE%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B&#34;&gt;网盘直链下载助手&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 </content>
-        <updated>2024-07-19T15:30:10.855Z</updated>
+        <updated>2024-07-22T16:46:38.920Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log23-01-02/</id>
-        <title>【Ubuntu】安装网易云音乐</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log23-01-02/"/>
+        <id>http://root2v.github.io/2024/07/23/Ubuntu/log23-01-02/</id>
+        <title>【Ubuntu】双系统安装记录（六）：安装网易云音乐、安装locate命令</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/23/Ubuntu/log23-01-02/"/>
         <content type="html">&lt;h1 id=&#34;安装网易云音乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装网易云音乐&#34;&gt;#&lt;/a&gt; 安装网易云音乐&lt;/h1&gt;
 &lt;h2 id=&#34;特别说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特别说明&#34;&gt;#&lt;/a&gt; 特别说明&lt;/h2&gt;
 &lt;p&gt;根据网上的教程安装出现了一些问题：&lt;/p&gt;
@@ -256,12 +256,12 @@
 &lt;p&gt;&lt;a href=&#34;https://www.iteye.com/blog/312788172-730280&#34;&gt;linux 下 which、whereis、locate、find 命令的区别&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/yucan1001/article/details/8451169&#34;&gt;which、whereis、locate、find 命令用法_肥萝卜使大力的博客 - CSDN 博客&lt;/a&gt;&lt;/p&gt;
 </content>
-        <updated>2024-07-19T15:30:10.841Z</updated>
+        <updated>2024-07-22T16:46:38.919Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log22-12-31/</id>
-        <title>【Ubuntu】GNOME安装及使用</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-31/"/>
+        <id>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-31/</id>
+        <title>【Ubuntu】双系统安装记录（五）：GNOME安装及使用</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/Ubuntu/log22-12-31/"/>
         <content type="html">&lt;h1 id=&#34;gnome安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gnome安装及使用&#34;&gt;#&lt;/a&gt; GNOME 安装及使用&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;本机使用的系统版本为 Ubuntu22.04 ，自带 gnome42 ，据说和原版 gnome 有区别，但我在使用中并未发现问题，因此就不重新安装 gnome 桌面了，直接添加 gnome 工具，以下是参考文章 &lt;a href=&#34;https://bytexd.com/how-to-install-gnome-desktop-in-ubuntu/&#34;&gt;How to Install GNOME Desktop in Ubuntu 22.04 or 20.04&lt;/a&gt; 中的一段话，感觉应该是说 Ubuntu 的 Gnome 算是一个为了与 Ubuntu 集成的特别版&lt;/p&gt;
@@ -440,9 +440,9 @@
         <updated>2024-07-19T15:30:10.832Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log22-12-29/</id>
-        <title>【Ubuntu】Ubuntu Windows(Win10)双系统时间不同步</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-29/"/>
+        <id>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-29/</id>
+        <title>【Ubuntu】双系统安装记录（四）：解决Ubuntu Win10双系统时间不同步</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/Ubuntu/log22-12-29/"/>
         <content type="html">&lt;h1 id=&#34;ubuntu-windowswin10双系统时间不同步&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-windowswin10双系统时间不同步&#34;&gt;#&lt;/a&gt; Ubuntu Windows (Win10) 双系统时间不同步&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;使用 Win10 玩游戏，发现每次登陆 Steam 上的游戏时发现提示当前存档和云存档进度不一，本地存档较新，每次退出游戏时即便等待 Steam 更新云存档完成还是会报警告&lt;br /&gt;
@@ -483,8 +483,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt; &lt;/p&gt;
 &lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
 &lt;h1 id=&#34;安装新输入法-fcitx5&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装新输入法-fcitx5&#34;&gt;#&lt;/a&gt; 安装新输入法 Fcitx5&lt;/h1&gt;
 &lt;h2 id=&#34;概述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述-2&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;原始输入法  &lt;code&gt;ibus&lt;/code&gt;&lt;/p&gt;
@@ -552,10 +552,13 @@
 &lt;/ul&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt; &lt;/p&gt;
 &lt;h1 id=&#34;一个比较完美的帖子&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一个比较完美的帖子&#34;&gt;#&lt;/a&gt; 一个比较完美的帖子&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_36153106/article/details/126656107&#34;&gt;ubuntu22.04 美化、办公、开发工具安装_他们叫我都叫兽的博客 - CSDN 博客_ubuntu22.04&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_42313728/article/details/125733569&#34;&gt;Ubuntu22.04 安装与配置记录_过客 WZX 的博客 - CSDN 博客_ubuntu22.04&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;h1 id=&#34;apt清理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#apt清理&#34;&gt;#&lt;/a&gt; APT 清理&lt;/h1&gt;
 &lt;p&gt;下载 Gnome-Tweaks 时不小心下载成  &lt;code&gt;gnome&lt;/code&gt;  下载中途紧急中止，幸而还没有下载完全，也没有安装，因此删除 APT 下载的安装包，这里记录一下  &lt;code&gt;apt&lt;/code&gt;  删除命令及缓存清理&lt;/p&gt;
@@ -592,9 +595,9 @@
         <updated>2024-07-19T15:30:10.828Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log22-12-20/</id>
-        <title>【Ubuntu】Github：Steam++及Git安装与配置</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-20/"/>
+        <id>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-20/</id>
+        <title>【Ubuntu】双系统安装记录（三）：Github访问、Steam++及Git安装与配置</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/Ubuntu/log22-12-20/"/>
         <content type="html">&lt;h1 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h1&gt;
 &lt;h2 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h2&gt;
 &lt;ul&gt;
@@ -757,9 +760,9 @@ proxy = socks5://127.0.0.1:1080
         <updated>2024-07-19T15:30:10.819Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log22-12-18/</id>
-        <title>【Ubuntu】安装MarkText插件</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-18/"/>
+        <id>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-18/</id>
+        <title>【Ubuntu】双系统安装记录（二）：安装MarkText插件</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/Ubuntu/log22-12-18/"/>
         <content type="html">&lt;h1 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h1&gt;
 &lt;h2 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h2&gt;
 &lt;ul&gt;
@@ -833,9 +836,9 @@ proxy = socks5://127.0.0.1:1080
         <updated>2024-07-19T15:30:10.815Z</updated>
     </entry>
     <entry>
-        <id>http://root2v.github.io/2024/07/19/log22-12-16/</id>
-        <title>【Ubuntu】双系统引导及基础配置</title>
-        <link rel="alternate" href="http://root2v.github.io/2024/07/19/log22-12-16/"/>
+        <id>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-16/</id>
+        <title>【Ubuntu】双系统安装记录（一）：引导及基础配置</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/19/Ubuntu/log22-12-16/"/>
         <content type="html">&lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;MBR GPT 区别&lt;/li&gt;
