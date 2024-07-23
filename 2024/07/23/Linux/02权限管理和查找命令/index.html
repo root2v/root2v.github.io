@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>【Linux操作学习】命令（二）：文件权限管理、查找命令 | ROOTX</title><meta name="author" content="Orin"><meta name="copyright" content="Orin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="# 权限管理 # 文件目录权限 目录   r：可以列出目录中的内容   w：可以在目录中创建文件、删除文件   x：可以进入目录   文件   r：可以查看文件内容   w：可以修改文件内容   x：可以执行文件   &nbsp; # chmod  改变文件或目录的权限  原意：  change the permissions mode of a file  语法： chmod [ { ugoa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Linux操作学习】命令（二）：文件权限管理、查找命令">
+<meta property="og:url" content="http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="ROOTX">
+<meta property="og:description" content="# 权限管理 # 文件目录权限 目录   r：可以列出目录中的内容   w：可以在目录中创建文件、删除文件   x：可以进入目录   文件   r：可以查看文件内容   w：可以修改文件内容   x：可以执行文件   &nbsp; # chmod  改变文件或目录的权限  原意：  change the permissions mode of a file  语法： chmod [ { ugoa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://root2v.github.io/img/Linux-cover.webp">
+<meta property="article:published_time" content="2024-07-23T10:43:45.696Z">
+<meta property="article:modified_time" content="2024-07-23T11:40:50.842Z">
+<meta property="article:author" content="Orin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://root2v.github.io/img/Linux-cover.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Orin","link":"链接: ","source":"来源: ROOTX","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Linux操作学习】命令（二）：文件权限管理、查找命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-23 19:40:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/fonts.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom2.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/categoryBar.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Linux-cover.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="ROOTX"><span class="site-name">ROOTX</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【Linux操作学习】命令（二）：文件权限管理、查找命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-23T10:43:45.696Z" title="发表于 2024-07-23 18:43:45">2024-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T11:40:50.842Z" title="更新于 2024-07-23 19:40:50">2024-07-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">828</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Linux操作学习】命令（二）：文件权限管理、查找命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="权限管理"><a class="anchor" href="#权限管理">#</a> 权限管理</h1>
+<h2 id="文件目录权限"><a class="anchor" href="#文件目录权限">#</a> 文件目录权限</h2>
+<p>目录</p>
+<ul>
+<li>
+<p>r：可以列出目录中的内容</p>
+</li>
+<li>
+<p>w：可以在目录中创建文件、删除文件</p>
+</li>
+<li>
+<p>x：可以进入目录</p>
+</li>
+</ul>
+<p>文件</p>
+<ul>
+<li>
+<p>r：可以查看文件内容</p>
+</li>
+<li>
+<p>w：可以修改文件内容</p>
+</li>
+<li>
+<p>x：可以执行文件</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="chmod"><a class="anchor" href="#chmod">#</a> chmod</h2>
+<blockquote>
+<p>改变文件或目录的权限</p>
+</blockquote>
+<p>原意：</p>
+<ul>
+<li><strong>ch</strong>ange the permissions <strong>mod</strong>e of a file</li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">chmod</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> ugoa <span class="token punctuation">}</span><span class="token punctuation">{</span> +-<span class="token operator">=</span> <span class="token punctuation">}</span><span class="token punctuation">{</span> rwx <span class="token punctuation">}</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> 文件或目录 <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">chmod</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> mode <span class="token operator">=</span> <span class="token number">421</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> 文件或目录 <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>-R：递归修改</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="chown"><a class="anchor" href="#chown">#</a> chown</h2>
+<blockquote>
+<p>改变文件或目录的所有者</p>
+</blockquote>
+<p>原意：</p>
+<ul>
+<li><strong>ch</strong>ange file <strong>own</strong>ership</li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">chown</span> <span class="token punctuation">[</span>用户<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录<span class="token punctuation">]</span></pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="chgrp"><a class="anchor" href="#chgrp">#</a> chgrp</h2>
+<blockquote>
+<p>改变文件或目录的所属组</p>
+</blockquote>
+<p>原意：</p>
+<ul>
+<li><strong>ch</strong>ange file <strong>gr</strong>ou<strong>p</strong> ownership</li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">chgrp</span> <span class="token punctuation">[</span>用户组<span class="token punctuation">]</span><span class="token punctuation">[</span>文件或目录<span class="token punctuation">]</span></pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="umask"><a class="anchor" href="#umask">#</a> umask</h2>
+<blockquote>
+<p>显示、设置文件的缺省权限</p>
+</blockquote>
+<p>原意：</p>
+<ul>
+<li>the <strong>u</strong>ser file-creation <strong>mask</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token builtin class-name">umask</span> <span class="token punctuation">[</span>-S<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>-S：以rwx形式显示新建文件缺省权限</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>未加选项显示的字符以异或方式加密</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="文件搜索"><a class="anchor" href="#文件搜索">#</a> 文件搜索</h1>
+<h2 id="find"><a class="anchor" href="#find">#</a> find</h2>
+<blockquote>
+<p>文件搜索</p>
+</blockquote>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">find</span> <span class="token punctuation">[</span>搜索范围<span class="token punctuation">]</span> <span class="token punctuation">[</span>匹配条件<span class="token punctuation">]</span> <span class="token punctuation">[</span> -a/-o <span class="token punctuation">]</span> <span class="token punctuation">[</span>匹配条件<span class="token punctuation">]</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span></pre></td></tr></tbody></table></figure><h3 id="匹配条件连接"><a class="anchor" href="#匹配条件连接">#</a> 匹配条件连接</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>-a：and，与</pre></td></tr><tr><td data-num="2"></td><td><pre>-o：or，或</pre></td></tr></tbody></table></figure><h3 id="搜索时执行操作"><a class="anchor" href="#搜索时执行操作">#</a> 搜索时执行操作</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token parameter variable">-exec</span> 命令 <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">find</span> /etc <span class="token parameter variable">-name</span> init* <span class="token parameter variable">-a</span> <span class="token parameter variable">-type</span> f <span class="token parameter variable">-exec</span> <span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="3"></td><td><pre>在/etc下查找以init开头的文件并显示文件详细信息</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token parameter variable">-ok</span> 命令 <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">find</span> /etc <span class="token parameter variable">-name</span> init* <span class="token parameter variable">-a</span> <span class="token parameter variable">-type</span> f <span class="token parameter variable">-ok</span> <span class="token function">ls</span> <span class="token parameter variable">-l</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="7"></td><td><pre>在/etc下查找以init开头的文件并显示文件详细信息，每个文件都进行询问</pre></td></tr></tbody></table></figure><h3 id="按名称查找"><a class="anchor" href="#按名称查找">#</a> 按名称查找</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>-name：</pre></td></tr><tr><td data-num="2"></td><td><pre>- <span class="token function">find</span> /etc <span class="token parameter variable">-name</span> init</pre></td></tr><tr><td data-num="3"></td><td><pre>  搜索名为init的文件</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>- <span class="token function">find</span> /etc <span class="token parameter variable">-name</span> *init*</pre></td></tr><tr><td data-num="6"></td><td><pre>  搜索名称中含有init字符的文件</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre>- <span class="token function">find</span> /etc <span class="token parameter variable">-name</span> init*</pre></td></tr><tr><td data-num="9"></td><td><pre>  搜索名称以init开头的文件</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>- <span class="token function">find</span> /etc <span class="token parameter variable">-name</span> init???</pre></td></tr><tr><td data-num="12"></td><td><pre>  ?代表未知字符</pre></td></tr><tr><td data-num="13"></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td><pre>-iname：不区分大小写，其他同 <span class="token parameter variable">-name</span></pre></td></tr></tbody></table></figure><h3 id="按大小查找"><a class="anchor" href="#按大小查找">#</a> 按大小查找</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token parameter variable">-size</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre> 数据块：1数据块 <span class="token operator">=</span> <span class="token number">512</span> Bytes <span class="token operator">=</span> <span class="token number">0.5</span> k</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">find</span> /etc <span class="token parameter variable">-size</span> +204800</pre></td></tr><tr><td data-num="5"></td><td><pre>查找大于204800数据块的文件</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token function">find</span> /etc <span class="token parameter variable">-size</span> <span class="token parameter variable">-204800</span></pre></td></tr><tr><td data-num="8"></td><td><pre>查找小于204800数据块的文件</pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token function">find</span> /etc <span class="token parameter variable">-size</span> <span class="token number">204800</span></pre></td></tr><tr><td data-num="11"></td><td><pre>查找等于204800数据块的文件</pre></td></tr></tbody></table></figure><h3 id="按用户查找"><a class="anchor" href="#按用户查找">#</a> 按用户查找</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>-user：按所有者查找</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>-group：按所属组查找</pre></td></tr></tbody></table></figure><h3 id="按时间查找"><a class="anchor" href="#按时间查找">#</a> 按时间查找</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">find</span> /etc <span class="token parameter variable">-cmin</span> <span class="token parameter variable">-5</span></pre></td></tr><tr><td data-num="2"></td><td><pre>在/etc目录下查找进5分钟内被修改过属性的文件和目录</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token parameter variable">-amin</span> <span class="token punctuation">[</span>+-min<span class="token punctuation">]</span>：访问时间<span class="token punctuation">(</span>acess<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token parameter variable">-cmin</span> <span class="token punctuation">[</span>+-min<span class="token punctuation">]</span>：文件属性<span class="token punctuation">(</span>change<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token parameter variable">-mmin</span> <span class="token punctuation">[</span>+-min<span class="token punctuation">]</span>：文件内容<span class="token punctuation">(</span>modify<span class="token punctuation">)</span></pre></td></tr></tbody></table></figure><h3 id="按文件类型查找"><a class="anchor" href="#按文件类型查找">#</a> 按文件类型查找</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token parameter variable">-type</span> <span class="token punctuation">[</span>文件类型<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>- f：文件</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>- d：目录</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>- l：链接文件</pre></td></tr></tbody></table></figure><h3 id="按i节点查找"><a class="anchor" href="#按i节点查找">#</a> 按 i 节点查找：</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token parameter variable">-inum</span></pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="locate"><a class="anchor" href="#locate">#</a> locate</h2>
+<blockquote>
+<p>在文件资料库中查找文件</p>
+</blockquote>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">locate</span> <span class="token punctuation">[</span>文件名<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">locate</span> <span class="token parameter variable">-i</span> <span class="token punctuation">[</span>文件名<span class="token punctuation">]</span>：不区分大小写</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>只能查找在文件资料库中有记录的文件</pre></td></tr></tbody></table></figure><p><code>updatedb</code> ：资料库更新命令<br>
+<em>即使更新了命令也不一定能找到，如 /tmp，用于存放临时文件</em></p>
+<p>&nbsp;</p>
+<h2 id="which"><a class="anchor" href="#which">#</a> which</h2>
+<blockquote>
+<p>搜索命令所在目录及别名信息</p>
+</blockquote>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">which</span> 命令</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="whereis"><a class="anchor" href="#whereis">#</a> whereis</h2>
+<blockquote>
+<p>搜索命令所在目录及帮助文档路径</p>
+</blockquote>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">whereis</span> <span class="token punctuation">[</span>命令<span class="token punctuation">]</span></pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="grep"><a class="anchor" href="#grep">#</a> grep</h2>
+<blockquote>
+<p>在文件中搜寻字符串匹配的行并输出</p>
+</blockquote>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">grep</span> <span class="token parameter variable">-iv</span> <span class="token punctuation">[</span> 指定字符串 <span class="token punctuation">]</span><span class="token punctuation">[</span> 文件 <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>-i：不区分大小写</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>-n：输出行号</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>-v：排除指定字符串</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token comment"># /etc/inittab</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  排除带 <span class="token comment"># 的文本行</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token function">grep</span> <span class="token parameter variable">-v</span> ^<span class="token comment"># /etc/inittab</span></pre></td></tr><tr><td data-num="13"></td><td><pre>  排除以 <span class="token comment"># 开头的文本行</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token parameter variable">--color</span><span class="token operator">=</span>auto：搜索处来的关键字用颜色显示</pre></td></tr></tbody></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://root2v.github.io">Orin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/">http://root2v.github.io/2024/07/23/Linux/02权限管理和查找命令/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://root2v.github.io" target="_blank">ROOTX</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/Linux-cover.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.webp" alt="wechat"></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.webp" alt="alipay"></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"><img class="cover" src="/img/Linux-cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/" title="【Linux操作学习】命令（一）：文件处理命令"><img class="cover" src="/img/Linux-cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【Linux操作学习】命令（一）：文件处理命令</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Orin</div><div class="author-info__description">rootx space</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/root2v"><i></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%9D%83%E9%99%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 文件目录权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chmod"><span class="toc-number">1.2.</span> <span class="toc-text"> chmod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chown"><span class="toc-number">1.3.</span> <span class="toc-text"> chown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chgrp"><span class="toc-number">1.4.</span> <span class="toc-text"> chgrp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#umask"><span class="toc-number">1.5.</span> <span class="toc-text"> umask</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2"><span class="toc-number">2.</span> <span class="toc-text"> 文件搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#find"><span class="toc-number">2.1.</span> <span class="toc-text"> find</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E6%9D%A1%E4%BB%B6%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 匹配条件连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%97%B6%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 搜索时执行操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E5%90%8D%E7%A7%B0%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 按名称查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E5%A4%A7%E5%B0%8F%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 按大小查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%94%A8%E6%88%B7%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.5.</span> <span class="toc-text"> 按用户查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%97%B6%E9%97%B4%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.6.</span> <span class="toc-text"> 按时间查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.7.</span> <span class="toc-text"> 按文件类型查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89i%E8%8A%82%E7%82%B9%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.8.</span> <span class="toc-text"> 按 i 节点查找：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#locate"><span class="toc-number">2.2.</span> <span class="toc-text"> locate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#which"><span class="toc-number">2.3.</span> <span class="toc-text"> which</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#whereis"><span class="toc-number">2.4.</span> <span class="toc-text"> whereis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#grep"><span class="toc-number">2.5.</span> <span class="toc-text"> grep</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】RPM包管理"></a><div class="content"><a class="title" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理">【Linux操作学习】RPM包管理</a><time datetime="2024-07-23T11:55:12.721Z" title="发表于 2024-07-23 19:55:12">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】Vim使用"></a><div class="content"><a class="title" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用">【Linux操作学习】Vim使用</a><time datetime="2024-07-23T11:41:28.838Z" title="发表于 2024-07-23 19:41:28">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"></a><div class="content"><a class="title" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令">【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</a><time datetime="2024-07-23T11:12:19.814Z" title="发表于 2024-07-23 19:12:19">2024-07-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2024 By Orin</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&amp;logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&amp;logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1374329431" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 570px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 480px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(img/Linux-cover.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">Linux操作学习</span></li><li class="categoryBar-list-item" style="background:url(img/blogs/Ubuntu-New-Logo2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Ubuntu/&quot;);" href="javascript:void(0);">Ubuntu</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr">Ubuntu双系统安装</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script></body></html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>【Linux操作学习】RPM包管理 | ROOTX</title><meta name="author" content="Orin"><meta name="copyright" content="Orin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="# 软件包简介 # 源码包  时间长，需要编译    脚本安装包   优点   开源   可以自由选择所需的功能   编译安装，所以更加适合自己的系统、稳定、效率高   卸载方便     # 二进制包  时间短，已编译，但是不能看源代码    Linux 不同系列最大的区别就是二进制包不同   RPM 包：RedHat 系列   系统默认包   &nbsp;  &nbsp; # RPM 命令管理 # rpm  压缩文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Linux操作学习】RPM包管理">
+<meta property="og:url" content="http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="ROOTX">
+<meta property="og:description" content="# 软件包简介 # 源码包  时间长，需要编译    脚本安装包   优点   开源   可以自由选择所需的功能   编译安装，所以更加适合自己的系统、稳定、效率高   卸载方便     # 二进制包  时间短，已编译，但是不能看源代码    Linux 不同系列最大的区别就是二进制包不同   RPM 包：RedHat 系列   系统默认包   &nbsp;  &nbsp; # RPM 命令管理 # rpm  压缩文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://root2v.github.io/img/Linux-cover.webp">
+<meta property="article:published_time" content="2024-07-23T11:55:12.721Z">
+<meta property="article:modified_time" content="2024-07-23T14:48:52.001Z">
+<meta property="article:author" content="Orin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://root2v.github.io/img/Linux-cover.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Orin","link":"链接: ","source":"来源: ROOTX","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Linux操作学习】RPM包管理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-23 22:48:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/fonts.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom2.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/categoryBar.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Linux-cover.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="ROOTX"><span class="site-name">ROOTX</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【Linux操作学习】RPM包管理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-23T11:55:12.721Z" title="发表于 2024-07-23 19:55:12">2024-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T14:48:52.001Z" title="更新于 2024-07-23 22:48:52">2024-07-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Linux操作学习】RPM包管理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="软件包简介"><a class="anchor" href="#软件包简介">#</a> 软件包简介</h1>
+<h2 id="源码包"><a class="anchor" href="#源码包">#</a> 源码包</h2>
+<blockquote>
+<p>时间长，需要编译</p>
+</blockquote>
+<ul>
+<li>
+<p>脚本安装包</p>
+</li>
+<li>
+<p>优点</p>
+<ul>
+<li>
+<p>开源</p>
+</li>
+<li>
+<p>可以自由选择所需的功能</p>
+</li>
+<li>
+<p>编译安装，所以更加适合自己的系统、稳定、效率高</p>
+</li>
+<li>
+<p>卸载方便</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二进制包"><a class="anchor" href="#二进制包">#</a> 二进制包</h2>
+<blockquote>
+<p>时间短，已编译，但是不能看源代码</p>
+</blockquote>
+<ul>
+<li>
+<p>Linux 不同系列最大的区别就是二进制包不同</p>
+</li>
+<li>
+<p>RPM 包：RedHat 系列</p>
+</li>
+<li>
+<p>系统默认包</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="rpm命令管理"><a class="anchor" href="#rpm命令管理">#</a> RPM 命令管理</h1>
+<h2 id="rpm"><a class="anchor" href="#rpm">#</a> rpm</h2>
+<blockquote>
+<p>压缩文件至  .gz  格式（不能压缩目录）</p>
+</blockquote>
+<p>原意：</p>
+<ul>
+<li><strong>R</strong>PM <strong>P</strong>ackage <strong>M</strong>anager</li>
+</ul>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">rpm</span> <span class="token punctuation">[</span>-ivh<span class="token punctuation">]</span> 包全名</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>-i：安装</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">install</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>-U：升级</pre></td></tr><tr><td data-num="7"></td><td><pre>Upgrade</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>-e：卸载</pre></td></tr><tr><td data-num="10"></td><td><pre>erase</pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>-v：显示详细信息</pre></td></tr><tr><td data-num="13"></td><td><pre>verbose</pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre>-h：显示进度</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token builtin class-name">hash</span></pre></td></tr><tr><td data-num="17"></td><td><pre></pre></td></tr><tr><td data-num="18"></td><td><pre>-q：查询</pre></td></tr><tr><td data-num="19"></td><td><pre>query</pre></td></tr><tr><td data-num="20"></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td><pre>- -i：查询安装信息</pre></td></tr><tr><td data-num="22"></td><td><pre>  information</pre></td></tr><tr><td data-num="23"></td><td><pre></pre></td></tr><tr><td data-num="24"></td><td><pre>- -f：查询系统文件属于哪个软件包</pre></td></tr><tr><td data-num="25"></td><td><pre>  <span class="token function">file</span></pre></td></tr><tr><td data-num="26"></td><td><pre></pre></td></tr><tr><td data-num="27"></td><td><pre>- -R：查询软件包的依赖性</pre></td></tr><tr><td data-num="28"></td><td><pre>  requires</pre></td></tr><tr><td data-num="29"></td><td><pre></pre></td></tr><tr><td data-num="30"></td><td><pre>- -p：查询未安装包信息</pre></td></tr><tr><td data-num="31"></td><td><pre>  package</pre></td></tr><tr><td data-num="32"></td><td><pre></pre></td></tr><tr><td data-num="33"></td><td><pre>-V：检验指定RPM包中的文件</pre></td></tr><tr><td data-num="34"></td><td><pre>Verify</pre></td></tr><tr><td data-num="35"></td><td><pre></pre></td></tr><tr><td data-num="36"></td><td><pre>-a：所有</pre></td></tr><tr><td data-num="37"></td><td><pre>all</pre></td></tr><tr><td data-num="38"></td><td><pre></pre></td></tr><tr><td data-num="39"></td><td><pre>--nodeps：不检测依赖性</pre></td></tr><tr><td data-num="40"></td><td><pre>no depends</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="rpm包命名规则"><a class="anchor" href="#rpm包命名规则">#</a> RPM 包命名规则</h2>
+<p><code>httpd-2.2.15-15.el6.centos.l.i686.rpm</code></p>
+<ul>
+<li>
+<p><strong>httpd</strong>：软件包名</p>
+</li>
+<li>
+<p><strong>2.2.15</strong>：软件版本</p>
+</li>
+<li>
+<p><strong>15</strong>：软件发布的次数</p>
+</li>
+<li>
+<p><strong>el6.centos</strong>：适合的 Linux 平台</p>
+</li>
+<li>
+<p><strong>i686</strong>：适合的硬件平台</p>
+</li>
+<li>
+<p><strong>rpm</strong>：rpm 包扩展名</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="rpm包依赖性"><a class="anchor" href="#rpm包依赖性">#</a> RPM 包依赖性</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.rpmfind.net/">模块依赖查询网站</a></p>
+</blockquote>
+<ul>
+<li>
+<p>树形依赖：a-&gt;b-&gt;c</p>
+</li>
+<li>
+<p>环形依赖：a-&gt;b-&gt;c-&gt;a</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="安装-升级和卸载"><a class="anchor" href="#安装-升级和卸载">#</a> 安装、升级和卸载</h2>
+<ul>
+<li>
+<p>包全名：操作的包是没有安装的包，且要注意路径</p>
+</li>
+<li>
+<p>包名：操作的包是已经安装的软件包，使用包名</p>
+</li>
+<li>
+<p>安装卸载都应该按依赖结构</p>
+<blockquote>
+<p>rpm -e 只会卸载当前包，不会卸载依赖包</p>
+</blockquote>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="查询"><a class="anchor" href="#查询">#</a> 查询</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">rpm</span> <span class="token parameter variable">-q</span> <span class="token punctuation">[</span> 包名 / 包全名 <span class="token punctuation">]</span></pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="校验和文件提取"><a class="anchor" href="#校验和文件提取">#</a> 校验和文件提取</h2>
+<blockquote>
+<p><code>rpm -V [ 包名 ]</code></p>
+</blockquote>
+<ul>
+<li>
+<p>验证内容中的 8 个信息</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>S：文件大小是否改变</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>M：文件的类型或文件的权限（rwx）是否被修改</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token number">5</span>：文件的MD5校验和是否改变</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>D：设备</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>L：文件路径是否改变</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>U：文件的属主（所有者）是否变化</pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre>T：文件的修改时间是否变化</pre></td></tr></tbody></table></figure></li>
+<li>
+<p>文件类型</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>c：配置文件</pre></td></tr><tr><td data-num="2"></td><td><pre>config <span class="token function">file</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>d：普通文件</pre></td></tr><tr><td data-num="5"></td><td><pre>documentation</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>g：“鬼”文件</pre></td></tr><tr><td data-num="8"></td><td><pre>ghost file，很少见，就是这个文件不该被这个RPM包含</pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>l：授权文件</pre></td></tr><tr><td data-num="11"></td><td><pre>license <span class="token function">file</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre>r：描述文件</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token builtin class-name">read</span> me</pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="rpm包中文件提取"><a class="anchor" href="#rpm包中文件提取">#</a> RPM 包中文件提取</h2>
+<h3 id="rpm2cpio"><a class="anchor" href="#rpm2cpio">#</a> rpm2cpio</h3>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>rpm2cpio 包全名 <span class="token operator">|</span> cpio <span class="token parameter variable">-idv</span> ./文件绝对路径</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h3 id="cpio"><a class="anchor" href="#cpio">#</a> cpio</h3>
+<p>执行权限：</p>
+<ul>
+<li><strong>所有用户</strong></li>
+</ul>
+<p>语法：</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>cpio <span class="token punctuation">[</span>-idv<span class="token punctuation">]</span> <span class="token operator">&lt;</span><span class="token punctuation">[</span>文件<span class="token operator">|</span>设备<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>-i：copy-in模式，还原</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>-d：还原时自动新建目录</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>-v：显示还原过程</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="yum在线管理"><a class="anchor" href="#yum在线管理">#</a> yum 在线管理</h1>
+<h2 id="ip地址配置和网络yum源"><a class="anchor" href="#ip地址配置和网络yum源">#</a> IP 地址配置和网络 yum 源</h2>
+<h3 id="ip地址配置方法"><a class="anchor" href="#ip地址配置方法">#</a> IP 地址配置方法</h3>
+<ul>
+<li>
+<p>直接修改 <code>/etc/sysconfig/network-scipts/ifcfg-ens33</code></p>
+</li>
+<li>
+<p><code>setup</code> （CentOS6）</p>
+</li>
+<li>
+<p><code>nmtui</code> （CentOS7）</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="网络yum源"><a class="anchor" href="#网络yum源">#</a> 网络 yum 源</h3>
+<p><code>/etc/yum.repos.d/CentOS-Base.repo</code></p>
+<ul>
+<li>
+<p><strong>[base]</strong>：容器名称<br>
+一定要放在 [] 中</p>
+</li>
+<li>
+<p><strong>name</strong>：容器说明<br>
+可以自己随便写</p>
+</li>
+<li>
+<p><strong>mirror</strong>：镜像站点<br>
+这个可以注释掉</p>
+</li>
+<li>
+<p><strong>baseurl</strong>：yum 源服务器的地址<br>
+默认是 CentOS 的官方的 yum 源服务器，是可以使用的，如果慢可换成其他 yum 源地址</p>
+</li>
+<li>
+<p><strong>enabled</strong>：此容器是否生效<br>
+ enable=1：生效；enable=0：不生效；不写默认生效</p>
+</li>
+<li>
+<p><strong>gpgcheck</strong>：RPM 的数字证书是否生效<br>
+ gpgcheck=1：生效；gpgcheck=0：不生效</p>
+</li>
+<li>
+<p><strong>gpgkey</strong>：数字证书的公钥文件保存位置<br>
+不用修改</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="yum命令"><a class="anchor" href="#yum命令">#</a> yum 命令</h2>
+<h3 id="查询-2"><a class="anchor" href="#查询-2">#</a> 查询</h3>
+<p>查询所有可用软件包列表</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum list</pre></td></tr></tbody></table></figure><p>搜索服务器上所有和关键字相关的包</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum search 关键字</pre></td></tr></tbody></table></figure><h3 id="下载"><a class="anchor" href="#下载">#</a> 下载</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> 包名</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token punctuation">(</span>-y 自动回答yes<span class="token punctuation">)</span></pre></td></tr></tbody></table></figure><h3 id="升级"><a class="anchor" href="#升级">#</a> 升级</h3>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum <span class="token parameter variable">-y</span> update 包名</pre></td></tr></tbody></table></figure><p>⚠️⚠️⚠️<em><strong>不加包名会升级 Linux 所有软件包，包括内核！⚠️</strong></em>⚠️⚠️</p>
+<h3 id="yum软件组管理"><a class="anchor" href="#yum软件组管理">#</a> yum 软件组管理</h3>
+<p>列出所有可用的软件组列表</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum grouplist</pre></td></tr></tbody></table></figure><p>安装指定软件组，组名可以由 grouplist 查询出来</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum groupinstall 软件组名</pre></td></tr></tbody></table></figure><p>卸载指定软件组</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yum groupremove 软件组名</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="光盘yum源搭建"><a class="anchor" href="#光盘yum源搭建">#</a> 光盘 yum 源搭建</h2>
+<ol>
+<li>
+<p>挂载光盘</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">mount</span> /dev/cdrom/ mnt/cdrom</pre></td></tr></tbody></table></figure></li>
+<li>
+<p>让网络 yum 源文件失效</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token builtin class-name">cd</span> /etc/yum.repos.d/</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">mv</span> CentOS-Base.repo CentOS-Base.repo.bak <span class="token comment"># 改名使这些文件失效</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">mv</span> CentOS-Debuginfo.repo CentOS-Debuginfo.repo.bak</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">mv</span> CentOS-Vault.repo CentOS-Vault.repo.bak</pre></td></tr></tbody></table></figure></li>
+<li>
+<p>修改光盘 yum 源文件</p>
+<ol>
+<li>修改光盘挂载点，/media/CentOS -&gt; baseurl 为默认挂载点，/mnt/cdrom 为自己设置的光盘挂载点</li>
+</ol>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">vim</span>  CentOS-Media.repo</pre></td></tr><tr><td data-num="2"></td><td><pre>baseurl <span class="token operator">=</span> file:///media/CentOS <span class="token operator">=</span><span class="token operator">&gt;</span> baseurl <span class="token operator">=</span> file:///mnt/cdrom</pre></td></tr></tbody></table></figure><ol start="2">
+<li>
+<p>其余挂载点注释，否则会报错</p>
+</li>
+<li>
+<p>使能： <code>enable = 0</code>  =&gt; `enable=1``</p>
+</li>
+<li>
+<p>验证： <code>yum list</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="源码包管理"><a class="anchor" href="#源码包管理">#</a> 源码包管理</h1>
+<h2 id="源码包和rpm包的区别"><a class="anchor" href="#源码包和rpm包的区别">#</a> 源码包和 RPM 包的区别</h2>
+<blockquote>
+<p>概念区别（安装之前的区别）、安装位置（安装之后的区别）</p>
+</blockquote>
+<h3 id="rpm包安装位置"><a class="anchor" href="#rpm包安装位置">#</a> RPM 包安装位置</h3>
+<ul>
+<li><code>/etc/</code> ：配置文件安装目录</li>
+<li><code>/usr/bin/</code> ：可执行的命令安装目录</li>
+<li><code>/usr/lib/</code> ：程序所使用的函数库保存位置</li>
+<li><code>/usr/share/doc</code> ：基本的软件使用手册保存位置</li>
+<li><code>/usr/share/man/</code> ：帮助文件保存位置</li>
+</ul>
+<h3 id="源码包安装位置"><a class="anchor" href="#源码包安装位置">#</a> 源码包安装位置</h3>
+<p><code>/usr/local/软件名/</code> ：Linux 给外部软件分配的安装位置</p>
+<h3 id="安装位置不同带来的影响"><a class="anchor" href="#安装位置不同带来的影响">#</a> 安装位置不同带来的影响</h3>
+<p><strong>RPM 包</strong>：RPM 包安装的服务可以使用系统服务管理命令 (service) 来管理</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>systemctl start httpd</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"># 启动 apache 后没有现象，关闭防火墙 systemctl stop firewalld</span></pre></td></tr></tbody></table></figure><p><strong>源码包</strong>：不能被系统服务管理命令管理，因为没有安装到默认路径，只能使用绝对路径管理</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>/usr/local/apache2/bin/apachectl start</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="脚本安装包"><a class="anchor" href="#脚本安装包">#</a> 脚本安装包</h1>
+<h2 id="安装"><a class="anchor" href="#安装">#</a> 安装</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token builtin class-name">cd</span> webmin-1.900</pre></td></tr><tr><td data-num="2"></td><td><pre>./setup.sh</pre></td></tr><tr><td data-num="3"></td><td><pre>选项选择</pre></td></tr></tbody></table></figure><h2 id="其他"><a class="anchor" href="#其他">#</a> 其他</h2>
+<p>查询文件夹大小</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">du</span> <span class="token parameter variable">-sh</span> 文件夹</pre></td></tr></tbody></table></figure><p>防火墙开放固定端口</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token comment"># 开放端口，--permanent 表示永久生效</span></pre></td></tr><tr><td data-num="2"></td><td><pre>firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token punctuation">[</span>端口号<span class="token punctuation">]</span>/tcp <span class="token parameter variable">--permanent</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment"># 重启防火墙服务后生效</span></pre></td></tr><tr><td data-num="5"></td><td><pre>systemctl restart firewalld</pre></td></tr></tbody></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://root2v.github.io">Orin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/">http://root2v.github.io/2024/07/23/Linux/05RPM包管理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://root2v.github.io" target="_blank">ROOTX</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/Linux-cover.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.webp" alt="wechat"></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.webp" alt="alipay"></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用"><img class="cover" src="/img/Linux-cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【Linux操作学习】Vim使用</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Orin</div><div class="author-info__description">rootx space</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/root2v"><i></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text"> 软件包简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%8C%85"><span class="toc-number">1.1.</span> <span class="toc-text"> 源码包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8C%85"><span class="toc-number">1.2.</span> <span class="toc-text"> 二进制包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rpm%E5%91%BD%E4%BB%A4%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text"> RPM 命令管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm"><span class="toc-number">2.1.</span> <span class="toc-text"> rpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm%E5%8C%85%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">2.2.</span> <span class="toc-text"> RPM 包命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm%E5%8C%85%E4%BE%9D%E8%B5%96%E6%80%A7"><span class="toc-number">2.3.</span> <span class="toc-text"> RPM 包依赖性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-%E5%8D%87%E7%BA%A7%E5%92%8C%E5%8D%B8%E8%BD%BD"><span class="toc-number">2.4.</span> <span class="toc-text"> 安装、升级和卸载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.5.</span> <span class="toc-text"> 查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E5%92%8C%E6%96%87%E4%BB%B6%E6%8F%90%E5%8F%96"><span class="toc-number">2.6.</span> <span class="toc-text"> 校验和文件提取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm%E5%8C%85%E4%B8%AD%E6%96%87%E4%BB%B6%E6%8F%90%E5%8F%96"><span class="toc-number">2.7.</span> <span class="toc-text"> RPM 包中文件提取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm2cpio"><span class="toc-number">2.7.1.</span> <span class="toc-text"> rpm2cpio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cpio"><span class="toc-number">2.7.2.</span> <span class="toc-text"> cpio</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#yum%E5%9C%A8%E7%BA%BF%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text"> yum 在线管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE%E5%92%8C%E7%BD%91%E7%BB%9Cyum%E6%BA%90"><span class="toc-number">3.1.</span> <span class="toc-text"> IP 地址配置和网络 yum 源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.1.</span> <span class="toc-text"> IP 地址配置方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9Cyum%E6%BA%90"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 网络 yum 源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum%E5%91%BD%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text"> yum 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2-2"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yum%E8%BD%AF%E4%BB%B6%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">3.2.4.</span> <span class="toc-text"> yum 软件组管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%9B%98yum%E6%BA%90%E6%90%AD%E5%BB%BA"><span class="toc-number">3.3.</span> <span class="toc-text"> 光盘 yum 源搭建</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%8C%85%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text"> 源码包管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%8C%85%E5%92%8Crpm%E5%8C%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.1.</span> <span class="toc-text"> 源码包和 RPM 包的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm%E5%8C%85%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="toc-number">4.1.1.</span> <span class="toc-text"> RPM 包安装位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%8C%85%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 源码包安装位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 安装位置不同带来的影响</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-number">5.</span> <span class="toc-text"> 脚本安装包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text"> 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">5.2.</span> <span class="toc-text"> 其他</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】RPM包管理"></a><div class="content"><a class="title" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理">【Linux操作学习】RPM包管理</a><time datetime="2024-07-23T11:55:12.721Z" title="发表于 2024-07-23 19:55:12">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】Vim使用"></a><div class="content"><a class="title" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用">【Linux操作学习】Vim使用</a><time datetime="2024-07-23T11:41:28.838Z" title="发表于 2024-07-23 19:41:28">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"></a><div class="content"><a class="title" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令">【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</a><time datetime="2024-07-23T11:12:19.814Z" title="发表于 2024-07-23 19:12:19">2024-07-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2024 By Orin</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&amp;logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&amp;logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1374329431" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 570px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 480px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(img/Linux-cover.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">Linux操作学习</span></li><li class="categoryBar-list-item" style="background:url(img/blogs/Ubuntu-New-Logo2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Ubuntu/&quot;);" href="javascript:void(0);">Ubuntu</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr">Ubuntu双系统安装</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script></body></html>

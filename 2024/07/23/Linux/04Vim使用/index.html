@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>【Linux操作学习】Vim使用 | ROOTX</title><meta name="author" content="Orin"><meta name="copyright" content="Orin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="# 常用命令 # 插入命令 a：在光标所在字符后插入i：在光标所在字符前插入A：在光标所在行行尾插入I：在光标所在行行首插入o：在光标下插入新行O：在光标上插入新行&nbsp; # 定位命令 :set nu：设置行号:set nonu：取消行号gg：到第一行G：到最后一个行:n：到第n行0：移至行首&nbsp; # 删除命令 x：删除光标所在处的字符nx：删除光标所在处的后n个字符dd：删除光标所在行，ndd删除n行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Linux操作学习】Vim使用">
+<meta property="og:url" content="http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="ROOTX">
+<meta property="og:description" content="# 常用命令 # 插入命令 a：在光标所在字符后插入i：在光标所在字符前插入A：在光标所在行行尾插入I：在光标所在行行首插入o：在光标下插入新行O：在光标上插入新行&nbsp; # 定位命令 :set nu：设置行号:set nonu：取消行号gg：到第一行G：到最后一个行:n：到第n行0：移至行首&nbsp; # 删除命令 x：删除光标所在处的字符nx：删除光标所在处的后n个字符dd：删除光标所在行，ndd删除n行">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://root2v.github.io/img/Linux-cover.webp">
+<meta property="article:published_time" content="2024-07-23T11:41:28.838Z">
+<meta property="article:modified_time" content="2024-07-23T11:54:50.179Z">
+<meta property="article:author" content="Orin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://root2v.github.io/img/Linux-cover.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Orin","link":"链接: ","source":"来源: ROOTX","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Linux操作学习】Vim使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-23 19:54:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/fonts.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom2.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/categoryBar.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Linux-cover.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="ROOTX"><span class="site-name">ROOTX</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【Linux操作学习】Vim使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-23T11:41:28.838Z" title="发表于 2024-07-23 19:41:28">2024-07-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T11:54:50.179Z" title="更新于 2024-07-23 19:54:50">2024-07-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">612</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Linux操作学习】Vim使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="常用命令"><a class="anchor" href="#常用命令">#</a> 常用命令</h1>
+<h2 id="插入命令"><a class="anchor" href="#插入命令">#</a> 插入命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>a：在光标所在字符后插入</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>i：在光标所在字符前插入</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>A：在光标所在行行尾插入</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>I：在光标所在行行首插入</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>o：在光标下插入新行</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>O：在光标上插入新行</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="定位命令"><a class="anchor" href="#定位命令">#</a> 定位命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>:set nu：设置行号</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>:set nonu：取消行号</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>gg：到第一行</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>G：到最后一个行</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>:n：到第n行</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token number">0</span>：移至行首</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="删除命令"><a class="anchor" href="#删除命令">#</a> 删除命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>x：删除光标所在处的字符</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>nx：删除光标所在处的后n个字符</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>dd：删除光标所在行，ndd删除n行</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>dG：删除光标所在行到文末的内容</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>D：删除光标所在处到行尾的内容</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre>:n1,n2d：删除指定范围的行</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="复制和剪切命令"><a class="anchor" href="#复制和剪切命令">#</a> 复制和剪切命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>yy：复制当前行</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>nyy：复制当前行以下的n行</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>dd：剪切当前行</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>ndd：剪切当前行以下n行</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>p、P：粘贴在当前光标所在行下或行上</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="替换和取消命令"><a class="anchor" href="#替换和取消命令">#</a> 替换和取消命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>r：取代光标所在处字符</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>R：从光标所在处开始替换字符，按Esc结束</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>u：取消上一步操作</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="搜索和搜索替换命令"><a class="anchor" href="#搜索和搜索替换命令">#</a> 搜索和搜索替换命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>/string：搜索指定字符串</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>- :set ic：搜索时忽略大小写</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>- n：搜索指定字符串出现的下一个位置</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>:%s/old/new/g：全文替换指定字符串</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>:n1,n2s/old/new/g：在一定范围内替换指定字符串</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="保存和退出命令"><a class="anchor" href="#保存和退出命令">#</a> 保存和退出命令</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>:w：保存修改</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>:w new_filename：另存为指定文件</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>:wq：保存修改并退出</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>ZZ：保存修改并退出</pre></td></tr><tr><td data-num="8"></td><td><pre>快捷键</pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>:q<span class="token operator">!</span>：不保存修改强制退出</pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>:wq<span class="token operator">!</span>：保存修改并强制退出</pre></td></tr><tr><td data-num="13"></td><td><pre>文件所有者及root可使用，可对不可写文件强制保存</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="使用技巧"><a class="anchor" href="#使用技巧">#</a> 使用技巧</h1>
+<h2 id="r"><a class="anchor" href="#r">#</a> :r</h2>
+<ul>
+<li>文件名：导入文件内容</li>
+<li>! 命令：导入命令执行结果</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="map"><a class="anchor" href="#map">#</a> :map</h2>
+<blockquote>
+<p>定义快捷键</p>
+</blockquote>
+<p>语法</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>:map 快捷键 触发命令</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>:map ^P I<span class="token comment">#&lt;ESC&gt;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>定义快捷键Ctrl+P，在行首添加 <span class="token comment"># 并退回命令模式</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>:map ^B 0x</pre></td></tr><tr><td data-num="7"></td><td><pre>定义快捷键Ctrl+B，删除行首字母</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="连续行注释"><a class="anchor" href="#连续行注释">#</a> 连续行注释</h2>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>:n1,n2s/^/<span class="token comment">#/g</span></pre></td></tr><tr><td data-num="2"></td><td><pre>将n1到n2行首加入<span class="token comment">#</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>:n1,n2s/^<span class="token comment">#//g</span></pre></td></tr><tr><td data-num="5"></td><td><pre>将n1到n2行首 <span class="token comment"># 号替换为空</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>:n1,n2s/^/ <span class="token punctuation">\</span> / <span class="token punctuation">\</span> / /g</pre></td></tr><tr><td data-num="8"></td><td><pre>将n1到n2行首加入//，文本中出现 / 时前面要加 <span class="token punctuation">\</span> 转义</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<h2 id="自动替换"><a class="anchor" href="#自动替换">#</a> 自动替换</h2>
+<p>语法</p>
+<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre>:ab <span class="token punctuation">[</span>old<span class="token punctuation">]</span> <span class="token punctuation">[</span>new<span class="token punctuation">]</span>：</pre></td></tr></tbody></table></figure><p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h1 id="永久存储设置"><a class="anchor" href="#永久存储设置">#</a> 永久存储设置</h1>
+<h2 id="vimrc"><a class="anchor" href="#vimrc">#</a> .vimrc</h2>
+<blockquote>
+<p>配置文件</p>
+</blockquote>
+<p>给 root 设置就放在 /root 下，其他用户就放在用户目录下</p>
+<p>注意：配置文件里不需要写  <code>:</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://root2v.github.io">Orin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/">http://root2v.github.io/2024/07/23/Linux/04Vim使用/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://root2v.github.io" target="_blank">ROOTX</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/Linux-cover.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.webp" alt="wechat"></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.webp" alt="alipay"></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理"><img class="cover" src="/img/Linux-cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【Linux操作学习】RPM包管理</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"><img class="cover" src="/img/Linux-cover.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Orin</div><div class="author-info__description">rootx space</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/root2v"><i></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text"> 常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text"> 插入命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text"> 定位命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text"> 删除命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E5%92%8C%E5%89%AA%E5%88%87%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text"> 复制和剪切命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E5%92%8C%E5%8F%96%E6%B6%88%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.</span> <span class="toc-text"> 替换和取消命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%92%8C%E6%90%9C%E7%B4%A2%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text"> 搜索和搜索替换命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E5%92%8C%E9%80%80%E5%87%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text"> 保存和退出命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">2.</span> <span class="toc-text"> 使用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#r"><span class="toc-number">2.1.</span> <span class="toc-text"> :r</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">2.2.</span> <span class="toc-text"> :map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E8%A1%8C%E6%B3%A8%E9%87%8A"><span class="toc-number">2.3.</span> <span class="toc-text"> 连续行注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%9B%BF%E6%8D%A2"><span class="toc-number">2.4.</span> <span class="toc-text"> 自动替换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B0%B8%E4%B9%85%E5%AD%98%E5%82%A8%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text"> 永久存储设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vimrc"><span class="toc-number">3.1.</span> <span class="toc-text"> .vimrc</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】RPM包管理"></a><div class="content"><a class="title" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理">【Linux操作学习】RPM包管理</a><time datetime="2024-07-23T11:55:12.721Z" title="发表于 2024-07-23 19:55:12">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】Vim使用"></a><div class="content"><a class="title" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用">【Linux操作学习】Vim使用</a><time datetime="2024-07-23T11:41:28.838Z" title="发表于 2024-07-23 19:41:28">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"></a><div class="content"><a class="title" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令">【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</a><time datetime="2024-07-23T11:12:19.814Z" title="发表于 2024-07-23 19:12:19">2024-07-23</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2024 By Orin</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&amp;logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&amp;logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1374329431" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 570px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 480px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(img/Linux-cover.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">Linux操作学习</span></li><li class="categoryBar-list-item" style="background:url(img/blogs/Ubuntu-New-Logo2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Ubuntu/&quot;);" href="javascript:void(0);">Ubuntu</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr">Ubuntu双系统安装</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script></body></html>

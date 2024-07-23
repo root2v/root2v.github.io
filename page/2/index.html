@@ -1,0 +1,427 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ROOTX - Space</title><meta name="author" content="Orin"><meta name="copyright" content="Orin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="rootx space">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ROOTX">
+<meta property="og:url" content="http://root2v.github.io/page/2/index.html">
+<meta property="og:site_name" content="ROOTX">
+<meta property="og:description" content="rootx space">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://root2v.github.io/img/avatar.webp">
+<meta property="article:author" content="Orin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://root2v.github.io/img/avatar.webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://root2v.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Orin","link":"链接: ","source":"来源: ROOTX","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ROOTX',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-24 00:14:06'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/fonts.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom2.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/categoryBar.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background: transparent"><nav id="nav"><span id="blog-info"><a href="/" title="ROOTX"><span class="site-name">ROOTX</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">ROOTX</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/07/19/Ubuntu/log22-12-29/" title="【Ubuntu】双系统安装记录（四）：解决Ubuntu Win10双系统时间不同步"><img class="post-bg" src="/img/blogs/Ubuntu-New-Logo2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Ubuntu】双系统安装记录（四）：解决Ubuntu Win10双系统时间不同步"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/19/Ubuntu/log22-12-29/" title="【Ubuntu】双系统安装记录（四）：解决Ubuntu Win10双系统时间不同步">【Ubuntu】双系统安装记录（四）：解决Ubuntu Win10双系统时间不同步</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-19T15:30:10.828Z" title="发表于 2024-07-19 23:30:10">2024-07-19</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T07:25:46.301Z" title="更新于 2024-07-23 15:25:46">2024-07-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Ubuntu/">Ubuntu</a></span></div><div class="content"># Ubuntu Windows (Win10) 双系统时间不同步
+# 概述
+使用 Win10 玩游戏，发现每次登陆 Steam 上的游戏时发现提示当前存档和云存档进度不一，本地存档较新，每次退出游戏时即便等待 Steam 更新云存档完成还是会报警告
+，这时发现每次登陆系统时间与当地时间不符，Steam 应该是通过存档时间判断，本地存档时系统时间不正确，记录了一个错误时间，校准过系统时间后再登陆游戏存档，退出重新登陆时就不会有问题了，但是为什么每次登陆时 Windows 系统时间会不准？查阅资料发现，是 Windows 和 Ubuntu 对 BIOS 时间的处理不同，最终通过 Ubuntu 的 timedatectl  时间管理工具修改 Ubuntu 设置解决
+&nbsp;
+# 问题原因
+BIOS 时间：系统硬件时间 (RTC)
+
+
+windows 认为，BIOS 时间就是当地时间。所以 windows 会直接显示 BIOS 时间
+
+
+ubuntu 认为，BIOS 时间应当是 UTC 时间（格林尼治标准时间）。所以 ubuntu 会将 BIOS 时间加上 8 小时后再显示出来（在中国）
+
+
+Ub ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/07/19/Ubuntu/log22-12-20/" title="【Ubuntu】双系统安装记录（三）：Github访问、Steam++及Git安装与配置"><img class="post-bg" src="/img/blogs/Ubuntu-New-Logo2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Ubuntu】双系统安装记录（三）：Github访问、Steam++及Git安装与配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/19/Ubuntu/log22-12-20/" title="【Ubuntu】双系统安装记录（三）：Github访问、Steam++及Git安装与配置">【Ubuntu】双系统安装记录（三）：Github访问、Steam++及Git安装与配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-19T15:30:10.819Z" title="发表于 2024-07-19 23:30:10">2024-07-19</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T07:25:42.304Z" title="更新于 2024-07-23 15:25:42">2024-07-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Ubuntu/">Ubuntu</a></span></div><div class="content"># Steam++ 安装
+# 下载
+
+
+Steam++ 官网
+
+
+会下载一个集合包，包含了各个平台的安装包，选择 Linux 的 deb 安装包
+
+
+&nbsp;
+# 安装
+
+sudo dpkg -i Steam++_linux_x64_[version].deb
+
+&nbsp;
+# 问题
+
+
+端口无法监听
+
+
+官方解决办法原文
+
+
+命令允许程序监听 1024 以下端口
+sudo setcap cap_net_bind_service=+eip /usr/share/Steam++/Steam++
+
+
+
+
+Host 文件读取权限受限
+
+仅限于 Host 代理模式下
+
+
+
+避免每次启动关闭加速需要输入密码，打开终端执行以下命令： sudo chmod a+w /etc/hosts
+
+
+如输入上面命令还提示无法 hosts 错误请尝试执行下面命令： sudo chmod a+r /etc/hosts
+
+
+
+
+被浏览器拦截
+
+显示 “不是专有连接” 等提示，无效证书
+
+
+
+解决办法：在浏览器设置中导入证书，从 颁发机构 导入
+
+
+证书本地存放地址：
+
+
+~/.local/share/Steam++ (用户文件夹 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/07/19/Ubuntu/log22-12-18/" title="【Ubuntu】双系统安装记录（二）：安装MarkText插件"><img class="post-bg" src="/img/blogs/Ubuntu-New-Logo2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Ubuntu】双系统安装记录（二）：安装MarkText插件"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/19/Ubuntu/log22-12-18/" title="【Ubuntu】双系统安装记录（二）：安装MarkText插件">【Ubuntu】双系统安装记录（二）：安装MarkText插件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-19T15:30:10.815Z" title="发表于 2024-07-19 23:30:10">2024-07-19</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T07:29:45.027Z" title="更新于 2024-07-23 15:29:45">2024-07-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Ubuntu/">Ubuntu</a></span></div><div class="content"># 安装 MarkText 插件
+# 资源
+
+
+Markext - GitHub Repository
+
+
+Markext 设置
+
+
+MarkDown 设置翻译
+
+
+&nbsp;
+# Appimage
+
+多年以来，我们一直使用 DEB packages 来管理 Debian/Ubuntu 的软件包，使用 RPM 管理 Fedora/SUSE 的软件包。
+用户使用这些包管理工具可以很方便的安装软件，但是这些仍然满足不了开发人员的需求。开发人员不得不开发更多的工具。这时 AppImage 来到了我们面前。AppImage 使用通用的软件格式，通过将整个软件打包成 AppImage, 一个包包含了所有的功能。并且几乎可以在所有的 linux 发行版本中使用。
+AppImage 不需要像传统的那样安装。通常我们安装 linux 软件将会在不同的目录生成多个文件，并且需要 root 权限来对系统进行修改。AppImage 不需要这么做。事实上，AppImage 并不需要安装。AppImage 是一个压缩的镜像文件，它包含所有运行所需要的依赖和库文件。你可以直接执行 AppImage 文件不需要安装。当你把 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/07/19/Ubuntu/log22-12-16/" title="【Ubuntu】双系统安装记录（一）：引导及基础配置"><img class="post-bg" src="/img/blogs/Ubuntu-New-Logo2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Ubuntu】双系统安装记录（一）：引导及基础配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/07/19/Ubuntu/log22-12-16/" title="【Ubuntu】双系统安装记录（一）：引导及基础配置">【Ubuntu】双系统安装记录（一）：引导及基础配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-19T15:30:10.799Z" title="发表于 2024-07-19 23:30:10">2024-07-19</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-23T07:28:35.028Z" title="更新于 2024-07-23 15:28:35">2024-07-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Ubuntu/">Ubuntu</a></span></div><div class="content"># 使用 ventoy 安装多系统
+
+MBR GPT 区别
+
+# 开机没有系统选择界面
+
+使用 boot-repairs 修复引导程序
+
+有报错，uefi 和 legecy 冲突，改 bios 设置为 uefi（或仅 uefi）
+
+
+重启后更新 grub
+
+sudo update-grub
+sudo update-grub2
+
+
+知识点
+
+学习
+
+
+
+# 主文件目录中文文件名改为英文
+
+切换语言，中文切换到英文，重启后同意更改文件名
+再从英文切换到中文，重启后不同意更改文件名且不再提醒
+
+# 安装浏览器
+
+chrome
+edge
+
+# VPN
+
+仅渡口没有 clash
+
+# 替换 grub 主题
+
+grub 主题资源
+其中一个主题 dedsec ，运行 pyton 脚本后需要更新 grub，且网站上的资源不能用，github 上的仓库可以用
+
+# 修改分区
+
+没有尝试，暂时根目录够用
+根目录分区多给点，因为很多软件默认安装在根目录
+有需要可以尝试的方法
+
+gparted（可能需要借助 u 盘，因为 ubuntu 无法卸载正在使用的挂在点，/home 的进程非常多，一旦杀掉就死机）
+
+
+ ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Orin</div><div class="author-info__description">rootx space</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/root2v"><i></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】RPM包管理"></a><div class="content"><a class="title" href="/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/" title="【Linux操作学习】RPM包管理">【Linux操作学习】RPM包管理</a><time datetime="2024-07-23T11:55:12.721Z" title="发表于 2024-07-23 19:55:12">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】Vim使用"></a><div class="content"><a class="title" href="/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/" title="【Linux操作学习】Vim使用">【Linux操作学习】Vim使用</a><time datetime="2024-07-23T11:41:28.838Z" title="发表于 2024-07-23 19:41:28">2024-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"><img src="/img/Linux-cover.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令"></a><div class="content"><a class="title" href="/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/" title="【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令">【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</a><time datetime="2024-07-23T11:12:19.814Z" title="发表于 2024-07-23 19:12:19">2024-07-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item"><a class="card-category-list-link" href="/categories/Ubuntu/"><span class="card-category-list-name">Ubuntu</span><span class="card-category-list-count">9</span></a></li>
+            </ul></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">14</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">14</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">12.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastpushdate="2024-07-23T16:14:06.527Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2024 By Orin</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&amp;logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/"><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&amp;logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["I wish you to become your own sun, no need to rely on who's light"])
+  } else {
+    document.getElementById("subtitle").textContent = "I wish you to become your own sun, no need to rely on who's light"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><div class="aplayer no-destroy" data-id="1374329431" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 570px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 480px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(img/Linux-cover.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Linux/&quot;);" href="javascript:void(0);">Linux</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">Linux操作学习</span></li><li class="categoryBar-list-item" style="background:url(img/blogs/Ubuntu-New-Logo2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Ubuntu/&quot;);" href="javascript:void(0);">Ubuntu</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr">Ubuntu双系统安装</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script></body></html>

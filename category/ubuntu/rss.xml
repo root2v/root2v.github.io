@@ -12,7 +12,7 @@
             <title>【Ubuntu】双系统安装记录（九）：卸载GTK+3导致GNOME崩溃</title>
             <link>http://root2v.github.io/2024/07/23/Ubuntu/log23-04-11/</link>
             <pubDate>Tue, 23 Jul 2024 00:46:38 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;卸载gtk3导致gnome崩溃&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#卸载gtk3导致gnome崩溃&#34;&gt;#&lt;/a&gt; 卸载 GTK+3 导致 GNOME 崩溃&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近运行一个软件需要用到 gtk 环境，下载 gtk+3 不能使用，打算卸载重装 gtk+2，卸载后  &lt;code&gt;gnome&lt;/code&gt;  疑似崩溃：&lt;/p&gt;
 &lt;ul&gt;
@@ -49,7 +49,7 @@
             <title>【Ubuntu】双系统安装记录（八）：游戏手柄库安装</title>
             <link>http://root2v.github.io/2024/07/23/Ubuntu/log23-01-12/</link>
             <pubDate>Tue, 23 Jul 2024 00:46:38 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;游戏手柄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#游戏手柄&#34;&gt;#&lt;/a&gt; 游戏手柄&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;游戏手柄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#游戏手柄&#34;&gt;#&lt;/a&gt; 游戏手柄&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;Python 开发游戏时想加入手柄&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
@@ -78,7 +78,7 @@
             <title>【Ubuntu】双系统安装记录（七）：安装微信和百度网盘</title>
             <link>http://root2v.github.io/2024/07/23/Ubuntu/log23-01-05/</link>
             <pubDate>Tue, 23 Jul 2024 00:46:38 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;安装微信&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;安装微信&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装微信&#34;&gt;#&lt;/a&gt; 安装微信&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;最近转手机文件太麻烦了，所以安装一个微信&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
@@ -145,7 +145,7 @@
             <title>【Ubuntu】双系统安装记录（六）：安装网易云音乐、安装locate命令</title>
             <link>http://root2v.github.io/2024/07/23/Ubuntu/log23-01-02/</link>
             <pubDate>Tue, 23 Jul 2024 00:46:38 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;安装网易云音乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装网易云音乐&#34;&gt;#&lt;/a&gt; 安装网易云音乐&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;安装网易云音乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装网易云音乐&#34;&gt;#&lt;/a&gt; 安装网易云音乐&lt;/h1&gt;
 &lt;h2 id=&#34;特别说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特别说明&#34;&gt;#&lt;/a&gt; 特别说明&lt;/h2&gt;
 &lt;p&gt;根据网上的教程安装出现了一些问题：&lt;/p&gt;
 &lt;ul&gt;
@@ -266,7 +266,7 @@
             <title>【Ubuntu】双系统安装记录（五）：GNOME安装及使用</title>
             <link>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-31/</link>
             <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;gnome安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gnome安装及使用&#34;&gt;#&lt;/a&gt; GNOME 安装及使用&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;gnome安装及使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gnome安装及使用&#34;&gt;#&lt;/a&gt; GNOME 安装及使用&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;本机使用的系统版本为 Ubuntu22.04 ，自带 gnome42 ，据说和原版 gnome 有区别，但我在使用中并未发现问题，因此就不重新安装 gnome 桌面了，直接添加 gnome 工具，以下是参考文章 &lt;a href=&#34;https://bytexd.com/how-to-install-gnome-desktop-in-ubuntu/&#34;&gt;How to Install GNOME Desktop in Ubuntu 22.04 or 20.04&lt;/a&gt; 中的一段话，感觉应该是说 Ubuntu 的 Gnome 算是一个为了与 Ubuntu 集成的特别版&lt;/p&gt;
 &lt;blockquote&gt;
@@ -447,7 +447,7 @@
             <title>【Ubuntu】双系统安装记录（四）：解决Ubuntu Win10双系统时间不同步</title>
             <link>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-29/</link>
             <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ubuntu-windowswin10双系统时间不同步&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-windowswin10双系统时间不同步&#34;&gt;#&lt;/a&gt; Ubuntu Windows (Win10) 双系统时间不同步&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;ubuntu-windowswin10双系统时间不同步&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ubuntu-windowswin10双系统时间不同步&#34;&gt;#&lt;/a&gt; Ubuntu Windows (Win10) 双系统时间不同步&lt;/h1&gt;
 &lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;p&gt;使用 Win10 玩游戏，发现每次登陆 Steam 上的游戏时发现提示当前存档和云存档进度不一，本地存档较新，每次退出游戏时即便等待 Steam 更新云存档完成还是会报警告&lt;br /&gt;
 ，这时发现每次登陆系统时间与当地时间不符，Steam 应该是通过存档时间判断，本地存档时系统时间不正确，记录了一个错误时间，校准过系统时间后再登陆游戏存档，退出重新登陆时就不会有问题了，但是为什么每次登陆时 Windows 系统时间会不准？查阅资料发现，是 Windows 和 Ubuntu 对 BIOS 时间的处理不同，最终通过 Ubuntu 的 &lt;code&gt;timedatectl&lt;/code&gt;  时间管理工具修改 Ubuntu 设置解决&lt;/p&gt;
@@ -602,7 +602,7 @@
             <title>【Ubuntu】双系统安装记录（三）：Github访问、Steam++及Git安装与配置</title>
             <link>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-20/</link>
             <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;steam-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#steam-安装&#34;&gt;#&lt;/a&gt; Steam++ 安装&lt;/h1&gt;
 &lt;h2 id=&#34;下载&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载&#34;&gt;#&lt;/a&gt; 下载&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -767,7 +767,7 @@ proxy = socks5://127.0.0.1:1080
             <title>【Ubuntu】双系统安装记录（二）：安装MarkText插件</title>
             <link>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-18/</link>
             <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h2&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h2 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h2&gt;
 &lt;h3 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -843,7 +843,7 @@ proxy = socks5://127.0.0.1:1080
             <title>【Ubuntu】双系统安装记录（一）：引导及基础配置</title>
             <link>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-16/</link>
             <pubDate>Fri, 19 Jul 2024 23:30:10 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;使用ventoy安装多系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用ventoy安装多系统&#34;&gt;#&lt;/a&gt; 使用 ventoy 安装多系统&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;MBR GPT 区别&lt;/li&gt;
 &lt;/ul&gt;
