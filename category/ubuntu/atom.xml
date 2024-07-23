@@ -763,8 +763,8 @@ proxy = socks5://127.0.0.1:1080
         <id>http://root2v.github.io/2024/07/19/Ubuntu/log22-12-18/</id>
         <title>【Ubuntu】双系统安装记录（二）：安装MarkText插件</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/19/Ubuntu/log22-12-18/"/>
-        <content type="html">&lt;h1 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h1&gt;
-&lt;h2 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h2&gt;
+        <content type="html">&lt;h2 id=&#34;安装marktext插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装marktext插件&#34;&gt;#&lt;/a&gt; 安装 MarkText 插件&lt;/h2&gt;
+&lt;h3 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/marktext/marktext&#34;&gt;Markext - GitHub Repository&lt;/a&gt;&lt;/p&gt;
