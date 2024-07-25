@@ -9,7 +9,7 @@
         <lastBuildDate>Tue, 23 Jul 2024 19:55:12 +0800</lastBuildDate>
         <item>
             <guid isPermalink="true">http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
-            <title>【Linux操作学习】RPM包管理</title>
+            <title>【Linux学习】RPM包管理</title>
             <link>http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/</link>
             <pubDate>Tue, 23 Jul 2024 19:55:12 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;软件包简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件包简介&#34;&gt;#&lt;/a&gt; 软件包简介&lt;/h1&gt;
@@ -275,7 +275,7 @@
         </item>
         <item>
             <guid isPermalink="true">http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/</guid>
-            <title>【Linux操作学习】Vim使用</title>
+            <title>【Linux学习】Vim使用</title>
             <link>http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/</link>
             <pubDate>Tue, 23 Jul 2024 19:41:28 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用命令&#34;&gt;#&lt;/a&gt; 常用命令&lt;/h1&gt;
@@ -326,7 +326,7 @@
         </item>
         <item>
             <guid isPermalink="true">http://root2v.github.io/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/</guid>
-            <title>【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</title>
+            <title>【Linux学习】命令（三）：帮助、用户管理、压缩解压、网络命令</title>
             <link>http://root2v.github.io/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/</link>
             <pubDate>Tue, 23 Jul 2024 19:12:19 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;帮助命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#帮助命令&#34;&gt;#&lt;/a&gt; 帮助命令&lt;/h1&gt;
@@ -621,7 +621,7 @@
         </item>
         <item>
             <guid isPermalink="true">http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/</guid>
-            <title>【Linux操作学习】命令（二）：文件权限管理、查找命令</title>
+            <title>【Linux学习】命令（二）：文件权限管理、查找命令</title>
             <link>http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/</link>
             <pubDate>Tue, 23 Jul 2024 18:43:45 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;权限管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#权限管理&#34;&gt;#&lt;/a&gt; 权限管理&lt;/h1&gt;
@@ -753,7 +753,7 @@
         </item>
         <item>
             <guid isPermalink="true">http://root2v.github.io/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/</guid>
-            <title>【Linux操作学习】命令（一）：文件处理命令</title>
+            <title>【Linux学习】命令（一）：文件处理命令</title>
             <link>http://root2v.github.io/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/</link>
             <pubDate>Tue, 23 Jul 2024 16:19:05 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;blockquote&gt;

@@ -6,7 +6,7 @@
     <updated>2024-07-23T11:55:12.721Z</updated>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/</id>
-        <title>【Linux操作学习】RPM包管理</title>
+        <title>【Linux学习】RPM包管理</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;软件包简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件包简介&#34;&gt;#&lt;/a&gt; 软件包简介&lt;/h1&gt;
 &lt;h2 id=&#34;源码包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码包&#34;&gt;#&lt;/a&gt; 源码包&lt;/h2&gt;
@@ -272,7 +272,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/</id>
-        <title>【Linux操作学习】Vim使用</title>
+        <title>【Linux学习】Vim使用</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用命令&#34;&gt;#&lt;/a&gt; 常用命令&lt;/h1&gt;
 &lt;h2 id=&#34;插入命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#插入命令&#34;&gt;#&lt;/a&gt; 插入命令&lt;/h2&gt;
@@ -323,7 +323,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/</id>
-        <title>【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</title>
+        <title>【Linux学习】命令（三）：帮助、用户管理、压缩解压、网络命令</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;帮助命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#帮助命令&#34;&gt;#&lt;/a&gt; 帮助命令&lt;/h1&gt;
 &lt;h2 id=&#34;man&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#man&#34;&gt;#&lt;/a&gt; man&lt;/h2&gt;
@@ -618,7 +618,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/</id>
-        <title>【Linux操作学习】命令（二）：文件权限管理、查找命令</title>
+        <title>【Linux学习】命令（二）：文件权限管理、查找命令</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;权限管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#权限管理&#34;&gt;#&lt;/a&gt; 权限管理&lt;/h1&gt;
 &lt;h2 id=&#34;文件目录权限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件目录权限&#34;&gt;#&lt;/a&gt; 文件目录权限&lt;/h2&gt;
@@ -750,7 +750,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/</id>
-        <title>【Linux操作学习】命令（一）：文件处理命令</title>
+        <title>【Linux学习】命令（一）：文件处理命令</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; &lt;em&gt;这个模块的所有文章是我两年前的学习记录，使用的 Linux 系统是 Cent OS，如果要自己使用请尽量查询后再考虑是否使用&lt;/em&gt;&lt;/p&gt;

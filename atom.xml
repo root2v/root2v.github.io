@@ -3,10 +3,97 @@
     <id>http://root2v.github.io</id>
     <title>ROOTX</title>
     <link href="http://root2v.github.io" />
-    <updated>2024-07-23T11:55:12.721Z</updated>
+    <updated>2024-07-23T16:14:52.346Z</updated>
+    <entry>
+        <id>http://root2v.github.io/2024/07/24/IC%E8%AE%BE%E8%AE%A1%E9%A1%B9%E7%9B%AE/M0-ISP/</id>
+        <title>SoC设计项目：在FPGA上实现M0内核及视频图像处理</title>
+        <link rel="alternate" href="http://root2v.github.io/2024/07/24/IC%E8%AE%BE%E8%AE%A1%E9%A1%B9%E7%9B%AE/M0-ISP/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;基础介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础介绍&#34;&gt;#&lt;/a&gt; 基础介绍&lt;/h1&gt;
+&lt;h2 id=&#34;cortex-m0&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cortex-m0&#34;&gt;#&lt;/a&gt; Cortex-M0&lt;/h2&gt;
+&lt;p&gt;Cortex-M0 是 ARM 公司在 2009 年发布的一款处理器，它基于冯・诺依曼架构，使用 32 位的精简指令集（RISC），Cortex-M0 的架构是 ARMv6-M，其中 M 表示的是架构的指令集为 Thumb 指令集的子集，虽然 ARM Cortex-M0 和 M0 + 两种微内核属于 ARMv6 版，但发布日期却在 ARMv7 之后，ARM 为了实现使用户能够在 FPGA 上使用 ARM 处理器以及实现超低功耗的嵌入式处理器应用，综合 ARMv7 的存储器系统和编程模型等技术，支持 Thumb-2 指令集 并针对功耗做进一步优化了现有的 ARMv6 架构，开发出了 ARMv6-M 架构，&lt;/p&gt;
+&lt;p&gt;下图是 Cortex-M0 的系统框图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://rootx-blogs-img.oss-cn-beijing.aliyuncs.com/pictures/202407252241992.jpg&#34; alt=&#34;arm_cortex-m0_structure&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;包括&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;处理器核心&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;寄存器组&lt;/li&gt;
+&lt;li&gt;算术逻辑单元（ALU）&lt;/li&gt;
+&lt;li&gt;数据总线&lt;/li&gt;
+&lt;li&gt;控制逻辑&lt;/li&gt;
+&lt;li&gt;三级流线设计：取指、译码、执行&lt;/li&gt;
+&lt;li&gt;0.85~1.27 DMIPS/MHz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;嵌套向量中断控制器 NVIC&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;32 个中断请求&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;1 个不可屏蔽中断输入（NMI）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内部总线系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;32 位总线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前 ARM 已经开放了 M0 和 M3 的 IP 核，可在如下的链接下载，或者去官网下载中心搜索&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.arm.com/resources/free-evaluation-arm-cpus&#34;&gt;Arm CPU Evaluation – Arm®&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于 M0 内核的相关内容，以后再写一篇博客，这里就不多赘述&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;ahb-lite&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ahb-lite&#34;&gt;#&lt;/a&gt; AHB-Lite&lt;/h2&gt;
+&lt;p&gt;AHB-Lite 是 AHB 的子集，是一个单主多从的总线，其结构框图如下，图中位 1 个 Master 和 3 个 Slave&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://rootx-blogs-img.oss-cn-beijing.aliyuncs.com/pictures/202407252323126.png&#34; alt=&#34;tmpA88&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;AHB-Lite 的大致工作流程是，主机发送地址和数据，（事实上是分两个时钟发出的，数据滞后地址一个时钟周期），解码器通过对地址解码，为对应的从机及多路选择器提供选择信号，选中对应的从机进行通信&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当主机写入时，根据 HSEL 信号，被选中的从机此时可以读取总线上的数据信号 HWDATA，更新自己的寄存器&lt;/li&gt;
+&lt;li&gt;当主机读取时，Slave 产生自己的 HRDATA_x 信号，多路选择器会根据解码器提供的选择信号，选择对应从机的 HRDATA_x 映射到 HRDATA 上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更多详细内容可以参考官方的数据手册：&lt;a href=&#34;https://eecs.umich.edu/courses/eecs373/readings/ARM_IHI0033A_AMBA_AHB-Lite_SPEC.pdf&#34;&gt;AMBA 3 AHB-Lite Protocol Specification (umich.edu)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;fpga&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#fpga&#34;&gt;#&lt;/a&gt; FPGA&lt;/h2&gt;
+&lt;p&gt;看这个博客的应该不需要 FPGA 的介绍，如果不清楚可以去搜一下先补补课，本次项目使用的 FPGA 为安路科技的 EG4S20BG256，它的主要资源如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;逻辑资源：19600 LUTs&lt;/li&gt;
+&lt;li&gt;片内存储资源：
+&lt;ul&gt;
+&lt;li&gt;64 块 9Kb 嵌入式 RAM (ERAM9K)、16 块 32Kb 嵌入式 RAM&lt;/li&gt;
+&lt;li&gt;64Mb 内置 SDRAM（2M*32bits）&lt;/li&gt;
+&lt;li&gt;最大 156.8Kb 分布式 RAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;时钟资源
+&lt;ul&gt;
+&lt;li&gt;16 个全局时钟&lt;/li&gt;
+&lt;li&gt;4 个 PLL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本次做视频图像显示，主要考虑存储、时钟和布线资源&lt;/p&gt;
+&lt;p&gt;首先是存储，这个芯片内置了一块 SDRAM 就方便了许多，要想缓存一帧 1080P 图像至少需要 16Mbits（2MB）的空间，而要想增加乒乓操作则需要再加一倍，如果没有的话可能就外挂一块 SDRAM&lt;/p&gt;
+&lt;p&gt;时钟上 HDMI 1080P@60Hz 需要 148.5MHz 的像素时钟和 742.5MHz 的像素时钟 x5，因此需要满足可输出的最大时钟要不小于 742.5MHz，这个芯片的 PLL 最大可输出 750MHz，因此也满足&lt;/p&gt;
+&lt;p&gt;此外这个芯片支持最高 800Mbps 的 True LVDS，选择特定的引脚在布线时会自动生成 LVDS 通道，相比于之前用 Xilinx 的 FPGA 做 HDMI 输出使用原语实现 LVDS 就少了一步，还挺方便的，并且也满足 HDMI 1080P@60Hz 的要求&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;isp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#isp&#34;&gt;#&lt;/a&gt; ISP&lt;/h2&gt;
+&lt;p&gt;ISP, Image Signal Process，即图像信号处理，目前有很多成熟的 ISP 算法，比如色域转换、去噪、白平衡、gamma 矫正、滤波等处理，最常见的应用就是相机&lt;/p&gt;
+&lt;h1 id=&#34;arm软核移植&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#arm软核移植&#34;&gt;#&lt;/a&gt; ARM 软核移植&lt;/h1&gt;
+&lt;p&gt;首先是软核移植&lt;/p&gt;
+&lt;h1 id=&#34;isp算法设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#isp算法设计&#34;&gt;#&lt;/a&gt; ISP 算法设计&lt;/h1&gt;
+&lt;p&gt;这些算法目前使用高级语言可以很轻松的实现，但是在 FPGA 上部署需要复杂一些，主要问题是缓存和时序，比如对很多算法来说需要进行算子运算，而算子运算则需要，对原有的图像数据&lt;/p&gt;
+&lt;h1 id=&#34;上位机设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上位机设计&#34;&gt;#&lt;/a&gt; 上位机设计&lt;/h1&gt;
+</content>
+        <updated>2024-07-23T16:14:52.346Z</updated>
+    </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/</id>
-        <title>【Linux操作学习】RPM包管理</title>
+        <title>【Linux学习】RPM包管理</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/05RPM%E5%8C%85%E7%AE%A1%E7%90%86/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;软件包简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件包简介&#34;&gt;#&lt;/a&gt; 软件包简介&lt;/h1&gt;
 &lt;h2 id=&#34;源码包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码包&#34;&gt;#&lt;/a&gt; 源码包&lt;/h2&gt;
@@ -272,7 +359,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/</id>
-        <title>【Linux操作学习】Vim使用</title>
+        <title>【Linux学习】Vim使用</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/04Vim%E4%BD%BF%E7%94%A8/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用命令&#34;&gt;#&lt;/a&gt; 常用命令&lt;/h1&gt;
 &lt;h2 id=&#34;插入命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#插入命令&#34;&gt;#&lt;/a&gt; 插入命令&lt;/h2&gt;
@@ -323,7 +410,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/</id>
-        <title>【Linux操作学习】命令（三）：帮助、用户管理、压缩解压、网络命令</title>
+        <title>【Linux学习】命令（三）：帮助、用户管理、压缩解压、网络命令</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/03%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%8E%8B%E7%BC%A9%E7%BD%91%E7%BB%9C/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;帮助命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#帮助命令&#34;&gt;#&lt;/a&gt; 帮助命令&lt;/h1&gt;
 &lt;h2 id=&#34;man&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#man&#34;&gt;#&lt;/a&gt; man&lt;/h2&gt;
@@ -618,7 +705,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/</id>
-        <title>【Linux操作学习】命令（二）：文件权限管理、查找命令</title>
+        <title>【Linux学习】命令（二）：文件权限管理、查找命令</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/02%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;权限管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#权限管理&#34;&gt;#&lt;/a&gt; 权限管理&lt;/h1&gt;
 &lt;h2 id=&#34;文件目录权限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件目录权限&#34;&gt;#&lt;/a&gt; 文件目录权限&lt;/h2&gt;
@@ -750,7 +837,7 @@
     </entry>
     <entry>
         <id>http://root2v.github.io/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/</id>
-        <title>【Linux操作学习】命令（一）：文件处理命令</title>
+        <title>【Linux学习】命令（一）：文件处理命令</title>
         <link rel="alternate" href="http://root2v.github.io/2024/07/23/Linux/01%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; &lt;em&gt;这个模块的所有文章是我两年前的学习记录，使用的 Linux 系统是 Cent OS，如果要自己使用请尽量查询后再考虑是否使用&lt;/em&gt;&lt;/p&gt;
